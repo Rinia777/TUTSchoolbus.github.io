@@ -1,0 +1,890 @@
+{
+    "hachioji": [
+        {
+            "start": "7:18",
+            "station": "7:30",
+            "stop": "7:48",
+            "status": "通常"
+        },
+        {
+            "start": "7:28",
+            "station": "7:40",
+            "stop": "7:58",
+            "status": "通常"
+        },
+        {
+            "start": "7:48",
+            "station": "8:00",
+            "stop": "8:18",
+            "status": "通常"
+        },
+        {
+            "start": "7:58",
+            "station": "8:10",
+            "stop": "8:28",
+            "status": "通常"
+        },
+        {
+            "start": "8:03",
+            "station": "8:15",
+            "stop": "8:33",
+            "status": "通常"
+        },
+        {
+            "start": "8:08",
+            "station": "8:20",
+            "stop": "8:38",
+            "status": "通常"
+        },
+        {
+            "start": "8:18",
+            "station": "8:30",
+            "stop": "8:48",
+            "status": "通常"
+        },
+        {
+            "start": "8:28",
+            "station": "8:40",
+            "stop": "8:58",
+            "status": "通常"
+        },
+        {
+            "start": "8:38",
+            "station": "8:50",
+            "stop": "9:08",
+            "status": "通常"
+        },
+        {
+            "start": "8:48",
+            "station": "9:00",
+            "stop": "9:18",
+            "status": "通常"
+        },
+        {
+            "start": "8:58",
+            "station": "9:10",
+            "stop": "9:28",
+            "status": "通常"
+        },
+        {
+            "start": "9:08",
+            "station": "9:20",
+            "stop": "9:38",
+            "status": "通常"
+        },
+        {
+            "start": "9:18",
+            "station": "9:30",
+            "stop": "9:48",
+            "status": "通常"
+        },
+        {
+            "start": "9:28",
+            "station": "9:40",
+            "stop": "9:58",
+            "status": "通常"
+        },
+        {
+            "start": "9:38",
+            "station": "9:50",
+            "stop": "10:08",
+            "status": "通常"
+        },
+        {
+            "start": "9:48",
+            "station": "10:00",
+            "stop": "10:18",
+            "status": "通常"
+        },
+        {
+            "start": "9:58",
+            "station": "10:10",
+            "stop": "10:28",
+            "status": "通常"
+        },
+        {
+            "start": "10:08",
+            "station": "10:20",
+            "stop": "10:38",
+            "status": "通常"
+        },
+        {
+            "start": "10:18",
+            "station": "10:30",
+            "stop": "10:48",
+            "status": "通常"
+        },
+        {
+            "start": "10:28",
+            "station": "10:40",
+            "stop": "10:58",
+            "status": "通常"
+        },
+        {
+            "start": "10:38",
+            "station": "10:50",
+            "stop": "11:08",
+            "status": "通常"
+        },
+        {
+            "start": "10:48",
+            "station": "11:00",
+            "stop": "11:18",
+            "status": "通常"
+        },
+        {
+            "start": "11:03",
+            "station": "11:15",
+            "stop": "11:33",
+            "status": "通常"
+        },
+        {
+            "start": "11:18",
+            "station": "11:30",
+            "stop": "11:48",
+            "status": "通常"
+        },
+        {
+            "start": "11:33",
+            "station": "11:45",
+            "stop": "12:03",
+            "status": "通常"
+        },
+        {
+            "start": "11:48",
+            "station": "12:00",
+            "stop": "12:18",
+            "status": "通常"
+        },
+        {
+            "start": "11:58",
+            "station": "12:10",
+            "stop": "12:28",
+            "status": "通常"
+        },
+        {
+            "start": "12:08",
+            "station": "12:20",
+            "stop": "12:38",
+            "status": "通常"
+        },
+        {
+            "start": "12:18",
+            "station": "12:30",
+            "stop": "12:48",
+            "status": "通常"
+        },
+        {
+            "start": "12:28",
+            "station": "12:40",
+            "stop": "12:58",
+            "status": "通常"
+        },
+        {
+            "start": "12:38",
+            "station": "12:50",
+            "stop": "13:08",
+            "status": "通常"
+        },
+        {
+            "start": "12:48",
+            "station": "13:00",
+            "stop": "13:18",
+            "status": "通常"
+        },
+        {
+            "start": "13:03",
+            "station": "13:15",
+            "stop": "13:33",
+            "status": "通常"
+        },
+        {
+            "start": "13:18",
+            "station": "13:30",
+            "stop": "13:48",
+            "status": "通常"
+        },
+        {
+            "start": "13:33",
+            "station": "13:45",
+            "stop": "14:03",
+            "status": "通常"
+        },
+        {
+            "start": "13:48",
+            "station": "14:00",
+            "stop": "14:18",
+            "status": "通常"
+        },
+        {
+            "start": "14:08",
+            "station": "14:20",
+            "stop": "14:38",
+            "status": "通常"
+        },
+        {
+            "start": "14:28",
+            "station": "14:40",
+            "stop": "14:58",
+            "status": "通常"
+        },
+        {
+            "start": "14:48",
+            "station": "15:00",
+            "stop": "15:18",
+            "status": "通常"
+        },
+        {
+            "start": "15:00",
+            "station": "15:11",
+            "stop": "15:29",
+            "status": "通常"
+        },
+        {
+            "start": "15:10",
+            "station": "15:21",
+            "stop": "15:39",
+            "status": "通常"
+        },
+        {
+            "start": "15:20",
+            "station": "15:31",
+            "stop": "15:49",
+            "status": "通常"
+        },
+        {
+            "start": "15:30",
+            "station": "15:41",
+            "stop": "15:59",
+            "status": "通常"
+        },
+        {
+            "start": "15:40",
+            "station": "15:51",
+            "stop": "16:09",
+            "status": "通常"
+        },
+        {
+            "start": "15:50",
+            "station": "16:01",
+            "stop": "16:19",
+            "status": "通常"
+        },
+        {
+            "start": "16:00",
+            "station": "16:11",
+            "stop": "16:29",
+            "status": "通常"
+        },
+        {
+            "start": "16:10",
+            "station": "16:21",
+            "stop": "16:39",
+            "status": "通常"
+        },
+        {
+            "start": "16:20",
+            "station": "16:31",
+            "stop": "16:49",
+            "status": "通常"
+        },
+        {
+            "start": "16:30",
+            "station": "16:41",
+            "stop": "16:59",
+            "status": "通常"
+        },
+        {
+            "start": "16:40",
+            "station": "16:51",
+            "stop": "17:09",
+            "status": "通常"
+        },
+        {
+            "start": "16:50",
+            "station": "17:01",
+            "stop": "17:19",
+            "status": "通常"
+        },
+        {
+            "start": "17:00",
+            "station": "17:11",
+            "stop": "17:29",
+            "status": "通常"
+        },
+        {
+            "start": "17:10",
+            "station": "17:21",
+            "stop": "17:39",
+            "status": "通常"
+        },
+        {
+            "start": "17:20",
+            "station": "17:31",
+            "stop": "17:49",
+            "status": "通常"
+        },
+        {
+            "start": "17:30",
+            "station": "17:41",
+            "stop": "17:59",
+            "status": "通常"
+        },
+        {
+            "start": "17:40",
+            "station": "17:51",
+            "stop": "18:09",
+            "status": "通常"
+        },
+        {
+            "start": "17:50",
+            "station": "18:01",
+            "stop": "18:19",
+            "status": "通常"
+        },
+        {
+            "start": "18:00",
+            "station": "18:11",
+            "stop": "18:29",
+            "status": "通常"
+        },
+        {
+            "start": "18:10",
+            "station": "18:21",
+            "stop": "18:39",
+            "status": "通常"
+        },
+        {
+            "start": "18:20",
+            "station": "18:31",
+            "stop": "18:49",
+            "status": "通常"
+        },
+        {
+            "start": "18:30",
+            "station": "18:41",
+            "stop": "18:59",
+            "status": "通常"
+        },
+        {
+            "start": "18:40",
+            "station": "18:51",
+            "stop": "19:09",
+            "status": "通常"
+        },
+        {
+            "start": "18:50",
+            "station": "19:01",
+            "stop": "19:19",
+            "status": "通常"
+        },
+        {
+            "start": "19:10",
+            "station": "19:21",
+            "stop": "19:39",
+            "status": "通常"
+        },
+        {
+            "start": "19:20",
+            "station": "19:31",
+            "stop": "19:49",
+            "status": "通常"
+        },
+        {
+            "start": "19:30",
+            "station": "19:41",
+            "stop": "19:59",
+            "status": "通常"
+        },
+        {
+            "start": "19:50",
+            "station": "20:01",
+            "stop": "20:19",
+            "status": "通常"
+        },
+        {
+            "start": "20:10",
+            "station": "20:21",
+            "stop": "20:39",
+            "status": "通常"
+        },
+        {
+            "start": "20:30",
+            "station": "20:41",
+            "stop": "20:59",
+            "status": "通常"
+        },
+        {
+            "start": "20:45",
+            "station": "20:56",
+            "stop": "21:14",
+            "status": "通常"
+        },
+        {
+            "start": "21:10",
+            "station": "21:21",
+            "stop": "21:39",
+            "status": "通常"
+        },
+        {
+            "start": "21:20",
+            "station": "21:31",
+            "stop": "21:49",
+            "status": "通常"
+        },
+        {
+            "start": "23:59",
+            "station": "23:59",
+            "stop": "23:59",
+            "status": "終了"
+        }
+    ],
+    "minamino": [
+        {
+            "start": "7:31",
+            "station": "7:38",
+            "stop": "7:48",
+            "status": "通常"
+        },
+        {
+            "start": "7:38",
+            "station": "7:45",
+            "stop": "7:55",
+            "status": "通常"
+        },
+        {
+            "start": "7:46",
+            "station": "7:53",
+            "stop": "8:03",
+            "status": "通常"
+        },
+        {
+            "start": "7:52",
+            "station": "7:59",
+            "stop": "8:09",
+            "status": "通常"
+        },
+        {
+            "start": "8:00",
+            "station": "8:07",
+            "stop": "8:17",
+            "status": "通常"
+        },
+        {
+            "start": "8:09",
+            "station": "8:16",
+            "stop": "8:26",
+            "status": "通常"
+        },
+        {
+            "start": "8:18",
+            "station": "8:25",
+            "stop": "8:35",
+            "status": "通常"
+        },
+        {
+            "start": "8:25",
+            "station": "8:32",
+            "stop": "8:42",
+            "status": "通常"
+        },
+        {
+            "start": "8:31",
+            "station": "8:38",
+            "stop": "8:48",
+            "status": "通常"
+        },
+        {
+            "start": "8:42",
+            "station": "8:49",
+            "stop": "8:59",
+            "status": "通常"
+        },
+        {
+            "start": "8:53",
+            "station": "9:00",
+            "stop": "9:10",
+            "status": "通常"
+        },
+        {
+            "start": "8:59",
+            "station": "9:06",
+            "stop": "9:16",
+            "status": "通常"
+        },
+        {
+            "start": "9:08",
+            "station": "9:15",
+            "stop": "9:25",
+            "status": "通常"
+        },
+        {
+            "start": "9:15",
+            "station": "9:22",
+            "stop": "9:32",
+            "status": "通常"
+        },
+        {
+            "start": "9:26",
+            "station": "9:33",
+            "stop": "9:43",
+            "status": "通常"
+        },
+        {
+            "start": "9:37",
+            "station": "9:44",
+            "stop": "9:54",
+            "status": "通常"
+        },
+        {
+            "start": "9:49",
+            "station": "9:56",
+            "stop": "10:06",
+            "status": "通常"
+        },
+        {
+            "start": "9:54",
+            "station": "10:01",
+            "stop": "10:11",
+            "status": "通常"
+        },
+        {
+            "start": "10:03",
+            "station": "10:12",
+            "stop": "10:22",
+            "status": "通常"
+        },
+        {
+            "start": "10:12",
+            "station": "10:19",
+            "stop": "10:29",
+            "status": "通常"
+        },
+        {
+            "start": "10:23",
+            "station": "10:30",
+            "stop": "10:40",
+            "status": "通常"
+        },
+        {
+            "start": "10:34",
+            "station": "10:41",
+            "stop": "10:51",
+            "status": "通常"
+        },
+        {
+            "start": "10:50",
+            "station": "10:57",
+            "stop": "11:07",
+            "status": "通常"
+        },
+        {
+            "start": "11:10",
+            "station": "11:17",
+            "stop": "11:27",
+            "status": "通常"
+        },
+        {
+            "start": "11:30",
+            "station": "11:37",
+            "stop": "11:47",
+            "status": "通常"
+        },
+        {
+            "start": "11:50",
+            "station": "11:57",
+            "stop": "12:07",
+            "status": "通常"
+        },
+        {
+            "start": "11:56",
+            "station": "12:03",
+            "stop": "12:13",
+            "status": "通常"
+        },
+        {
+            "start": "12:10",
+            "station": "12:17",
+            "stop": "12:27",
+            "status": "通常"
+        },
+        {
+            "start": "12:16",
+            "station": "12:23",
+            "stop": "12:33",
+            "status": "通常"
+        },
+        {
+            "start": "12:30",
+            "station": "12:37",
+            "stop": "12:47",
+            "status": "通常"
+        },
+        {
+            "start": "12:37",
+            "station": "12:44",
+            "stop": "12:54",
+            "status": "通常"
+        },
+        {
+            "start": "12:50",
+            "station": "12:57",
+            "stop": "13:07",
+            "status": "通常"
+        },
+        {
+            "start": "12:56",
+            "station": "13:03",
+            "stop": "13:13",
+            "status": "通常"
+        },
+        {
+            "start": "13:10",
+            "station": "13:17",
+            "stop": "13:27",
+            "status": "通常"
+        },
+        {
+            "start": "13:30",
+            "station": "13:37",
+            "stop": "13:47",
+            "status": "通常"
+        },
+        {
+            "start": "13:50",
+            "station": "13:57",
+            "stop": "14:07",
+            "status": "通常"
+        },
+        {
+            "start": "13:57",
+            "station": "14:04",
+            "stop": "14:14",
+            "status": "通常"
+        },
+        {
+            "start": "14:10",
+            "station": "14:17",
+            "stop": "14:27",
+            "status": "通常"
+        },
+        {
+            "start": "14:30",
+            "station": "14:37",
+            "stop": "14:47",
+            "status": "通常"
+        },
+        {
+            "start": "14:50",
+            "station": "14:57",
+            "stop": "15:07",
+            "status": "通常"
+        },
+        {
+            "start": "15:02",
+            "station": "15:09",
+            "stop": "15:19",
+            "status": "通常"
+        },
+        {
+            "start": "15:14",
+            "station": "15:21",
+            "stop": "15:31",
+            "status": "通常"
+        },
+        {
+            "start": "15:21",
+            "station": "15:28",
+            "stop": "15:38",
+            "status": "通常"
+        },
+        {
+            "start": "15:34",
+            "station": "15:41",
+            "stop": "15:51",
+            "status": "通常"
+        },
+        {
+            "start": "15:44",
+            "station": "15:51",
+            "stop": "16:01",
+            "status": "通常"
+        },
+        {
+            "start": "15:56",
+            "station": "16:03",
+            "stop": "16:13",
+            "status": "通常"
+        },
+        {
+            "start": "16:09",
+            "station": "16:16",
+            "stop": "16:26",
+            "status": "通常"
+        },
+        {
+            "start": "16:29",
+            "station": "16:36",
+            "stop": "16:46",
+            "status": "通常"
+        },
+        {
+            "start": "16:39",
+            "station": "16:46",
+            "stop": "16:56",
+            "status": "通常"
+        },
+        {
+            "start": "16:51",
+            "station": "16:58",
+            "stop": "17:08",
+            "status": "通常"
+        },
+        {
+            "start": "17:01",
+            "station": "17:08",
+            "stop": "17:18",
+            "status": "通常"
+        },
+        {
+            "start": "17:11",
+            "station": "17:18",
+            "stop": "17:28",
+            "status": "通常"
+        },
+        {
+            "start": "17:18",
+            "station": "17:25",
+            "stop": "17:35",
+            "status": "通常"
+        },
+        {
+            "start": "17:27",
+            "station": "17:34",
+            "stop": "17:44",
+            "status": "通常"
+        },
+        {
+            "start": "17:36",
+            "station": "17:43",
+            "stop": "17:53",
+            "status": "通常"
+        },
+        {
+            "start": "17:45",
+            "station": "17:52",
+            "stop": "18:02",
+            "status": "通常"
+        },
+        {
+            "start": "17:53",
+            "station": "18:00",
+            "stop": "18:10",
+            "status": "通常"
+        },
+        {
+            "start": "18:02",
+            "station": "18:09",
+            "stop": "18:19",
+            "status": "通常"
+        },
+        {
+            "start": "18:10",
+            "station": "18:17",
+            "stop": "18:27",
+            "status": "通常"
+        },
+        {
+            "start": "18:20",
+            "station": "18:27",
+            "stop": "18:37",
+            "status": "通常"
+        },
+        {
+            "start": "18:30",
+            "station": "18:37",
+            "stop": "18:47",
+            "status": "通常"
+        },
+        {
+            "start": "18:44",
+            "station": "18:51",
+            "stop": "19:01",
+            "status": "通常"
+        },
+        {
+            "start": "18:53",
+            "station": "19:00",
+            "stop": "19:10",
+            "status": "通常"
+        },
+        {
+            "start": "19:15",
+            "station": "19:22",
+            "stop": "19:32",
+            "status": "通常"
+        },
+        {
+            "start": "19:27",
+            "station": "19:34",
+            "stop": "19:44",
+            "status": "通常"
+        },
+        {
+            "start": "19:36",
+            "station": "19:43",
+            "stop": "19:53",
+            "status": "通常"
+        },
+        {
+            "start": "19:47",
+            "station": "19:54",
+            "stop": "20:04",
+            "status": "通常"
+        },
+        {
+            "start": "20:08",
+            "station": "20:15",
+            "stop": "20:25",
+            "status": "通常"
+        },
+        {
+            "start": "20:30",
+            "station": "20:37",
+            "stop": "20:47",
+            "status": "通常"
+        },
+        {
+            "start": "20:49",
+            "station": "20:56",
+            "stop": "21:06",
+            "status": "通常"
+        },
+        {
+            "start": "21:00",
+            "station": "21:07",
+            "stop": "21:17",
+            "status": "通常"
+        },
+        {
+            "start": "21:11",
+            "station": "21:18",
+            "stop": "21:28",
+            "status": "通常"
+        },
+        {
+            "start": "23:59",
+            "station": "23:59",
+            "stop": "23:59",
+            "status": "終了"
+        }
+    ],
+    "gakuseikaikan": [
+        {
+            "start": "",
+            "station": "",
+            "stop": "",
+            "status": "なし"
+        }
+    ]
+}

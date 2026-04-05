@@ -1,46 +1,9 @@
 {
     "hachioji": [
-        {"start": "7:47", "station": "8:00", "stop": "8:18", "status": "通常"},
-        {"start": "8:07", "station": "8:20", "stop": "8:38", "status": "通常"},
-        {"start": "8:23", "station": "8:35", "stop": "8:53", "status": "通常"},
-        {"start": "8:37", "station": "8:50", "stop": "9:08", "status": "通常"},
-        {"start": "8:57", "station": "9:10", "stop": "9:28", "status": "通常"},
-        {"start": "9:27", "station": "9:40", "stop": "9:58", "status": "通常"},
-        {"start": "9:57", "station": "10:10", "stop": "10:28", "status": "通常"},
-        {"start": "10:32", "station": "10:45", "stop": "11:03", "status": "通常"},
-        {"start": "11:32", "station": "11:45", "stop": "12:03", "status": "通常"},
-        {"start": "11:57", "station": "12:10", "stop": "12:28", "status": "通常"},
-        {"start": "12:27", "station": "12:40", "stop": "12:58", "status": "通常"},
-        {"start": "13:03", "station": "13:15", "stop": "13:33", "status": "通常"},
-        {"start": "13:33", "station": "13:45", "stop": "14:03", "status": "通常"},
-        {"start": "14:47", "station": "15:00", "stop": "15:18", "status": "通常"},
-        {"start": "15:10", "station": "15:23", "stop": "15:41", "status": "通常"},
-        {"start": "15:40", "station": "15:53", "stop": "16:11", "status": "通常"},
-        {"start": "16:10", "station": "16:22", "stop": "16:40", "status": "通常"},
-        {"start": "16:40", "station": "16:52", "stop": "17:10", "status": "通常"},
-        {"start": "17:00", "station": "17:12", "stop": "17:30", "status": "通常"},
-        {"start": "17:40", "station": "17:52", "stop": "18:10", "status": "通常"},
-        {"start": "18:10", "station": "18:22", "stop": "18:40", "status": "通常"},
-        {"start": "19:10", "station": "19:22", "stop": "19:40", "status": "通常"},
-        {"start": "23:59", "station": "23:59", "stop": "23:59", "status": "終了"}
+        {"start": "", "station": "", "stop": "", "status": "なし"}
     ],
     "minamino": [
-        {"start": "8:08", "station": "8:16", "stop": "8:28", "status": "通常"},
-        {"start": "8:35", "station": "8:43", "stop": "8:55", "status": "通常"},
-        {"start": "9:02", "station": "9:10", "stop": "9:22", "status": "通常"},
-        {"start": "9:25", "station": "9:33", "stop": "9:45", "status": "通常"},
-        {"start": "10:17", "station": "10:25", "stop": "10:37", "status": "通常"},
-        {"start": "11:28", "station": "11:36", "stop": "11:48", "status": "通常"},
-        {"start": "12:28", "station": "12:36", "stop": "12:48", "status": "通常"},
-        {"start": "13:08", "station": "13:16", "stop": "13:28", "status": "通常"},
-        {"start": "14:08", "station": "14:16", "stop": "14:28", "status": "通常"},
-        {"start": "15:21", "station": "15:29", "stop": "15:41", "status": "通常"},
-        {"start": "16:21", "station": "16:29", "stop": "16:41", "status": "通常"},
-        {"start": "17:01", "station": "17:09", "stop": "17:21", "status": "通常"},
-        {"start": "17:41", "station": "17:49", "stop": "18:01", "status": "通常"},
-        {"start": "18:10", "station": "18:18", "stop": "18:30", "status": "通常"},
-        {"start": "19:10", "station": "19:18", "stop": "19:30", "status": "通常"},
-        {"start": "23:59", "station": "23:59", "stop": "23:59", "status": "終了"}
+        {"start": "", "station": "", "stop": "", "status": "なし"}
     ],
     "gakuseikaikan": [
         {"start": "", "station": "", "stop": "", "status": "なし"}
