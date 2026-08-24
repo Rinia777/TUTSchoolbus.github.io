@@ -1,6 +1,6 @@
 {
     "hachioji": [
-        {"start": "7:18", "station": "7:32", "stop": "7:48", "status": "通常"},
+        {"start": "7:18", "station": "7:30", "stop": "7:48", "status": "通常"},
         {"start": "7:33", "station": "7:45", "stop": "8:03", "status": "通常"},
         {"start": "7:48", "station": "8:00", "stop": "8:18", "status": "通常"},
         {"start": "7:58", "station": "8:10", "stop": "8:28", "status": "通常"},
