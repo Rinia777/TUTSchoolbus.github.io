@@ -3,7 +3,7 @@ import { join } from 'node:path';
 
 const root = process.cwd();
 const dist = join(root, 'dist');
-const required = ['app/index.html', 'kiyaku.html', 'poricy.html', 'service-config.json', 'bustimelist/config.json'];
+const required = ['app/index.html', 'kiyaku.html', 'poricy.html', 'sitemap.xml', 'service-config.json', 'bustimelist/config.json'];
 mkdirSync(dist, { recursive: true });
 for (const file of ['kiyaku.html', 'poricy.html']) cpSync(join(root, file), join(dist, file));
 cpSync(join(root, 'service-config.json'), join(dist, 'service-config.json'));

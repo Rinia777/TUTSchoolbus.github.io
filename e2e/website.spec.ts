@@ -11,8 +11,9 @@ test('timetable page exposes the app-like controls and route navigation', async 
   await gotoTimetable(page);
   await expect(page.getByRole('heading', { name: 'スクールバス時刻表' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'スマホアプリはこちらから！' })).toBeVisible();
-  await expect(page.getByText('東京工科大学・八王子キャンパス')).toBeVisible();
+  await expect(page.getByText('東京工科大学・八王子キャンパス', { exact: true })).toBeVisible();
   await expect(page.locator('.footer-notice')).toBeVisible();
+  await expect(page.locator('.footer-notice')).toContainText('東京工科大学・八王子キャンパスのスクールバス予定時刻を確認できるWeb時刻表です。八王子駅、八王子みなみ野駅、学生会館と大学間の、本日・明日の時刻表に対応しています。');
   await expect(page.locator('.footer-notice')).toContainText('本サイトは東京工科大学の公式サービスではありません。東京工科大学への本サイトに関するお問い合わせはお控えください。');
   const noticePlacement = await page.locator('.footer-notice').evaluate((node) => ({ parent: node.parentElement?.className, next: node.nextElementSibling?.tagName }));
   expect(noticePlacement.parent).toBe('site-footer');
@@ -30,6 +31,8 @@ test('timetable page exposes the app-like controls and route navigation', async 
   expect(refreshStyle).toEqual({ borderRadius: '0px', borderWidth: '0px', backgroundColor: 'rgba(0, 0, 0, 0)' });
   const footerBackgrounds = await page.locator('.site-footer').evaluate((footer) => ({ footer: getComputedStyle(footer).backgroundColor, notice: getComputedStyle(footer.querySelector('.footer-notice') as HTMLElement).backgroundColor }));
   expect(footerBackgrounds.footer).toBe(footerBackgrounds.notice);
+  await expect(page.locator('.site-footer a[href="https://x.com/tut__app"]')).toHaveText('X（@tut__app）');
+  await expect(page.locator('.site-footer a[href="mailto:rin.ichikawa.appcreate@gmail.com"]')).toHaveText('お問い合わせ');
   await expect(page.getByRole('button', { name: '時刻表を再読み込み' }).first()).toBeVisible();
   await expect(page.getByRole('button', { name: /前のルート|次のルート/ })).toHaveCount(0);
   await expect(page.getByRole('tab', { name: /登校/ })).toHaveAttribute('aria-selected', 'true');
@@ -37,6 +40,41 @@ test('timetable page exposes the app-like controls and route navigation', async 
   await expect(page.locator('#route-carousel')).toHaveAttribute('aria-label', /2 \/ 3/);
   await page.getByRole('tab', { name: /登校/ }).press('ArrowRight');
   await expect(page.getByRole('tab', { name: /下校/ })).toHaveAttribute('aria-selected', 'true');
+});
+
+test('exposes the approved SEO metadata, structured data, and sitemap', async ({ page, request }) => {
+  await gotoTimetable(page);
+  await expect(page).toHaveTitle('東京工科大学 スクールバス時刻表（八王子キャンパス）｜非公式');
+  await expect(page.locator('meta[name="google-site-verification"]')).toHaveAttribute('content', '9TgERWroL0sh0LoX9wftWViQGmUyvis402dEAkC3KHs');
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', '東京工科大学・八王子キャンパスのスクールバス予定時刻を確認できる非公式Web時刻表です。八王子駅、八王子みなみ野駅、学生会館の3ルートに対応しています。');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://rinia777.github.io/TUTSchoolbus.github.io/');
+  await expect(page.locator('meta[property="og:url"]')).toHaveAttribute('content', 'https://rinia777.github.io/TUTSchoolbus.github.io/');
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://rinia777.github.io/TUTSchoolbus.github.io/app-icon.png');
+  await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute('content', 'summary');
+  await expect(page.locator('meta[name="twitter:site"]')).toHaveAttribute('content', '@tut__app');
+  expect(JSON.parse(await page.locator('script[type="application/ld+json"]').textContent() ?? '{}')).toMatchObject({ '@type': 'WebSite', url: 'https://rinia777.github.io/TUTSchoolbus.github.io/' });
+
+  await page.goto('/app/');
+  await expect(page).toHaveTitle('東京工科大学スクールバスアプリ｜非公式アプリ');
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', '東京工科大学・八王子キャンパスのスクールバス予定時刻を手軽に確認できる非公式iOSアプリの紹介ページです。');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://rinia777.github.io/TUTSchoolbus.github.io/app/');
+  await expect(page.locator('meta[name="twitter:site"]')).toHaveAttribute('content', '@tut__app');
+  expect(JSON.parse(await page.locator('script[type="application/ld+json"]').textContent() ?? '{}')).toMatchObject({ '@type': 'SoftwareApplication', operatingSystem: 'iOS' });
+
+  await page.goto('/kiyaku.html');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://rinia777.github.io/TUTSchoolbus.github.io/kiyaku.html');
+  await page.goto('/poricy.html');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://rinia777.github.io/TUTSchoolbus.github.io/poricy.html');
+
+  const sitemap = await request.get('/sitemap.xml');
+  expect(sitemap.ok()).toBe(true);
+  const sitemapText = await sitemap.text();
+  for (const url of [
+    'https://rinia777.github.io/TUTSchoolbus.github.io/',
+    'https://rinia777.github.io/TUTSchoolbus.github.io/app/',
+    'https://rinia777.github.io/TUTSchoolbus.github.io/kiyaku.html',
+    'https://rinia777.github.io/TUTSchoolbus.github.io/poricy.html',
+  ]) expect(sitemapText).toContain(`<loc>${url}</loc>`);
 });
 
 test('follows the browser color scheme across timetable, app, and legal pages', async ({ page }) => {
@@ -181,7 +219,7 @@ test('timetable search fetches and displays a selected date', async ({ page }) =
   await expect(searchButton).toBeFocused();
 });
 
-test('app page has confirmed iOS and X links but no unconfirmed Android/contact placeholders', async ({ page }) => {
+test('app page has confirmed iOS, X, and email links but no unconfirmed Android placeholders', async ({ page }) => {
   await page.goto('/app/');
   await expect(page.getByRole('heading', { name: /東京工科大学.*スクールバスアプリ/ })).toBeVisible();
   await expect(page.getByRole('heading', { name: '対応状況' })).toHaveCount(0);
@@ -205,6 +243,7 @@ test('app page has confirmed iOS and X links but no unconfirmed Android/contact 
   await expect(page.locator('a[href*="apps.apple.com"] img')).toHaveAttribute('src', /app-store-badge-ja-black-[^/]+\.svg/);
   expect(await page.locator('a[href*="apps.apple.com"] img').evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
   await expect(page.locator('a[href*="x.com/tut__app"]')).toHaveCount(1);
+  await expect(page.locator('.app-footer a[href="mailto:rin.ichikawa.appcreate@gmail.com"]')).toHaveText('お問い合わせ');
   await expect(page.locator('a[href*="play.google.com"]')).toHaveCount(0);
   await expect(page.locator('a[href*="t.co/0LTkBLx0jX"]')).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'Web時刻表' }).first()).toHaveAttribute('href', '../');
