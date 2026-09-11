@@ -1,0 +1,17 @@
+@layer pages {
+  .timetable-main { background: var(--color-background); }
+  .carousel-frame { position: relative; max-width: 780px; margin: 0 auto; padding: 8px 0 18px; }
+  .route-carousel { display: flex; width: 100%; gap: 5%; overflow-x: auto; padding: 12px 6%; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; touch-action: pan-y; cursor: grab; }
+  .route-carousel.is-dragging { scroll-snap-type: none; cursor: grabbing; user-select: none; }
+  .route-carousel::-webkit-scrollbar { display: none; }
+  .route-card { scroll-snap-align: center; }
+  .card-empty { display: grid; min-height: 310px; place-items: center; color: var(--color-muted); }
+  @media (min-width: 750px) {
+    .footer-notice { padding-right: max(18px, calc((100% - 675px) / 2)); padding-left: max(18px, calc((100% - 675px) / 2)); }
+    .carousel-frame { padding-right: 0; padding-left: 0; }
+    .route-carousel { padding-right: 0; padding-left: 0; }
+  }
+  @media (max-width: 430px) {
+    .route-picker { overflow-x: auto; justify-content: flex-start; }
+  }
+}

@@ -1,1 +1,106 @@
-index
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#EEF3F8" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101B2C" />
+    <link rel="icon" type="image/png" sizes="1024x1024" href="./app-icon.png" />
+    <link rel="icon" type="image/png" sizes="1024x1024" href="./app-icon-dark.png" media="(prefers-color-scheme: dark)" data-theme-image="dark" />
+    <link rel="apple-touch-icon" sizes="1024x1024" href="./app-icon.png" />
+    <script>
+      try {
+        const mode = localStorage.getItem('tut-web-appearance-mode');
+        if (mode === 'light' || mode === 'dark') {
+          document.documentElement.dataset.theme = mode;
+          document.querySelectorAll('[data-theme-image="dark"]').forEach((asset) => { asset.media = mode === 'dark' ? 'all' : 'not all'; });
+        }
+      } catch (_) {}
+    </script>
+    <meta name="description" content="東京工科大学スクールバスの予定時刻を確認できるWeb時刻表です。" />
+    <title>バス時刻表 | 東京工科大学スクールバス</title>
+  </head>
+  <body>
+    <div class="site-shell timetable-shell">
+      <header class="site-header">
+        <div class="header-start">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="ナイトモードに切り替える" aria-pressed="false">
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path></svg>
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"></path></svg>
+          </button>
+          <a class="header-link" href="./app/" aria-label="スマホアプリはこちらから！">スマホアプリはこちらから！</a>
+        </div>
+        <div class="site-brand" aria-label="スクールバス時刻表 東京工科大学・八王子キャンパス">
+          <div class="site-brand-copy">
+            <h1>スクールバス時刻表</h1>
+            <p>東京工科大学・八王子キャンパス</p>
+          </div>
+          <picture class="site-brand-icon" aria-hidden="true">
+            <source srcset="./app-icon-dark.png" media="(prefers-color-scheme: dark)" data-theme-image="dark" />
+            <img src="./app-icon.png" width="1024" height="1024" alt="" />
+          </picture>
+        </div>
+        <div class="stripe" aria-hidden="true"><i></i><i></i><i></i></div>
+      </header>
+
+      <main id="timetable-app" class="timetable-main">
+        <div class="status-row" aria-live="polite">
+          <span id="clock-label">日本時間 --:--</span>
+          <span id="fetch-label">読み込み中...</span>
+        </div>
+
+        <div class="direction-tabs" role="tablist" aria-label="バスの方向">
+          <button class="direction-tab" id="direction-to-school" type="button" role="tab" aria-selected="true" aria-controls="route-carousel" data-direction="to-school">登校<span>大学方面</span></button>
+          <button class="direction-tab" id="direction-to-station" type="button" role="tab" aria-selected="false" aria-controls="route-carousel" data-direction="to-station">下校<span>駅・学生会館方面</span></button>
+        </div>
+
+        <nav id="route-picker" class="route-picker" aria-label="ルートを選択"></nav>
+
+        <div class="carousel-frame">
+          <div id="route-carousel" class="route-carousel" tabindex="0" role="region" aria-roledescription="カルーセル" aria-label="スクールバスのルート"></div>
+        </div>
+
+        <p id="app-error" class="app-error" role="alert" hidden></p>
+
+        <noscript>
+          <div class="noscript-message">
+            <h2>JavaScriptを有効にしてください</h2>
+            <p>時刻表の計算と表示にはJavaScriptが必要です。最新の予定は<a href="https://www.teu.ac.jp/campus/access/006644.html">大学公式の交通案内</a>でも確認できます。</p>
+          </div>
+        </noscript>
+      </main>
+
+      <dialog id="app-install-prompt" class="app-install-dialog" aria-labelledby="app-install-title" aria-describedby="app-install-description">
+        <div class="app-install-inner">
+          <button class="app-install-close" type="button" data-app-promo-close aria-label="閉じる">×</button>
+          <p class="app-install-eyebrow">SMARTPHONE APP</p>
+          <h2 id="app-install-title">東京工科大学<br />スクールバスアプリ</h2>
+          <p id="app-install-description" class="app-install-lead">次のバスや本日・明日の時刻表を、スマートフォンですぐ確認できます。</p>
+          <div class="app-install-actions">
+            <a class="app-install-store" data-app-promo-store href="https://apps.apple.com/jp/app/%E6%9D%B1%E4%BA%AC%E5%B7%A5%E7%A7%91%E5%A4%A7%E5%AD%A6%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB%E3%83%90%E3%82%B9%E3%82%A2%E3%83%97%E3%83%AA/id6758648706" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/app-store-badge-ja-black.svg" width="167" height="55" alt="App Storeからダウンロード" />
+            </a>
+            <a class="app-install-details" data-app-promo-details href="./app/">アプリの詳しい内容を見る</a>
+          </div>
+          <p class="app-install-note">本アプリは卒業生が運営している非公式アプリです。</p>
+        </div>
+      </dialog>
+
+      <footer class="site-footer">
+        <section class="footer-notice" aria-label="本サイトについての注意">
+          <p>本サイトは東京工科大学の公式サービスではありません。東京工科大学への本サイトに関するお問い合わせはお控えください。</p>
+          <p>表示時刻は予定であり、<br />実際の運行と異なる場合があります。</p>
+          <a href="https://www.teu.ac.jp/campus/access/006644.html" target="_blank" rel="noopener noreferrer">大学公式の交通案内を確認する</a>
+        </section>
+        <nav aria-label="サイト情報">
+          <a href="./app/">アプリについて</a>
+          <a href="./kiyaku.html">利用規約</a>
+          <a href="./poricy.html">プライバシーポリシー</a>
+        </nav>
+        <p>AppleおよびAppleのロゴは、米国その他の国や地域で登録されたApple Inc.の商標です。App StoreはApple Inc.のサービスマークです。</p>
+      </footer>
+    </div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

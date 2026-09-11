@@ -1,0 +1,96 @@
+@layer components {
+  .eyebrow, .section-kicker { margin: 0; color: var(--color-tut-blue); font-size: .7rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+  .footer-notice { padding: 20px 18px 12px; background: inherit; text-align: center; }
+  .footer-notice p { max-width: 58ch; margin: 5px auto; font-size: .82rem; }
+  .footer-notice a { display: block; max-width: 58ch; margin: 8px auto 0; color: var(--color-tut-blue); font-size: .8rem; font-weight: 700; }
+  .status-row { display: flex; justify-content: space-between; gap: 8px; max-width: 675px; margin: 0 auto; padding: 8px 18px; color: var(--color-muted); font-size: .75rem; }
+  .direction-tabs { display: grid; grid-template-columns: 1fr 1fr; max-width: 750px; margin: 0 auto; background: var(--color-surface); box-shadow: var(--shadow-ui); }
+  .direction-tab { min-height: 58px; border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--color-muted); font-weight: 700; }
+  .direction-tab[aria-selected="true"] { border-bottom-color: var(--color-tut-blue); color: var(--color-tut-blue); }
+  .direction-tab span { display: block; font-size: .65rem; font-weight: 400; }
+  .route-picker { display: flex; justify-content: center; gap: 7px; max-width: 675px; margin: 16px auto 6px; padding: 0 16px; }
+  .route-choice { min-height: 36px; padding: 5px 10px; border: 1px solid var(--color-border); border-radius: 999px; background: var(--color-surface); color: var(--color-muted); font-size: .75rem; }
+  .route-choice[aria-current="true"] { border-color: var(--color-primary); background: var(--color-primary); color: var(--color-on-primary); font-weight: 700; }
+  .route-card { width: min(88vw, 500px); min-height: 430px; flex: 0 0 min(88vw, 500px); overflow: hidden; border: 1px solid var(--color-card-border); border-radius: var(--radius-card); background: var(--color-surface); box-shadow: var(--shadow-card); }
+  .route-card-heading { display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; min-height: 70px; padding: 10px 12px; background: var(--color-primary); color: var(--color-on-primary); text-align: center; }
+  .route-card-heading h2 { grid-column: 2; margin: 0; font-size: clamp(1.05rem, 4vw, 1.4rem); }
+  .card-refresh-button { grid-column: 3; display: grid; place-items: center; justify-self: end; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--color-on-primary); }
+  .card-refresh-button svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
+  .card-refresh-button:hover:not(:disabled) { background: transparent; opacity: .82; }
+  .card-refresh-button:disabled { opacity: .45; cursor: wait; }
+  .service-state { margin: 12px 20px 0; font-size: .78rem; font-weight: 800; text-align: center; }
+  .service-state.status-service { color: var(--color-tut-blue); }
+  .service-state.status-temporary { color: var(--color-danger); }
+  .service-state.status-shuttle, .service-state.status-finished, .service-state.status-no-service, .service-state.status-unknown { color: var(--color-danger); }
+  .next-bus-countdown { display: flex; flex-direction: column; align-items: center; gap: 2px; margin: 3px 20px 0; color: var(--color-text); text-align: center; }
+  .next-bus-countdown-label { color: var(--color-muted); font-size: .78rem; font-weight: 400; }
+  .next-bus-countdown-value { display: inline-flex; align-items: flex-end; gap: .12em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: clamp(1.25rem, 5vw, 1.65rem); font-weight: 400; letter-spacing: .03em; line-height: 1; }
+  .countdown-part { display: inline-flex; align-items: flex-end; gap: .04em; line-height: 1; }
+  .countdown-number { line-height: 1; }
+  .countdown-unit { align-self: flex-end; color: var(--color-muted); font-size: .48em; letter-spacing: 0; line-height: 1; }
+  .endpoint-labels { display: grid; grid-template-columns: 1fr 1fr; margin: 16px 24px 0; color: var(--color-muted); font-size: .65rem; text-align: center; }
+  .trip-list { margin: 1px 20px 16px; }
+  .trip-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; min-height: 58px; border-bottom: 1px solid var(--color-timetable-divider); }
+  .trip-time { display: flex; align-items: baseline; justify-content: center; gap: 3px; }
+  .time-value { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: clamp(1.35rem, 6vw, 1.85rem); letter-spacing: -.05em; }
+  .time-label { color: var(--color-muted); font-size: .72rem; }
+  .trip-arrow { color: var(--color-timetable-arrow); font-size: 1.25rem; }
+  .card-status-message { margin: 28px 8px; color: var(--color-muted); font-size: .9rem; text-align: center; }
+  .card-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: auto 16px 18px; }
+  .table-button { min-width: max-content; min-height: 44px; flex: 1 1 auto; padding: 10px; border: 0; border-radius: 10px; background: var(--color-primary); color: var(--color-on-primary); font-size: .78rem; font-weight: 700; white-space: nowrap; }
+  .card-search-action { display: flex; justify-content: center; margin: 0 16px 18px; }
+  .card-search-action .search-button { flex: 0 1 220px; }
+  .app-error { max-width: 675px; margin: 10px auto; padding: 10px 16px; border-radius: 12px; background: var(--color-notice-background); color: var(--color-danger); font-size: .8rem; }
+  .timetable-dialog { width: min(94vw, 680px); max-height: min(86vh, 760px); padding: 0; border: 0; border-radius: 22px; background: var(--color-surface-elevated); color: var(--color-text); box-shadow: var(--shadow-dialog); }
+  .timetable-dialog::backdrop { background: var(--color-backdrop); }
+  .dialog-inner { padding: 18px; }
+  .dialog-heading { display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; position: sticky; top: 0; padding-bottom: 10px; background: var(--color-surface-elevated); }
+  .dialog-heading h2 { grid-column: 2; margin: 0; color: var(--color-tut-blue); font-size: 1.1rem; text-align: center; }
+  .dialog-close { grid-column: 3; width: 44px; height: 44px; justify-self: end; padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--color-text); font-size: 1.6rem; line-height: 1; }
+  .dialog-endpoint-labels { margin-top: 12px; }
+  .dialog-routes { overflow: auto; }
+  .dialog-route { padding: 10px 0 14px; }
+  .dialog-route h3 { margin: 0 0 5px; color: var(--color-tut-blue); font-size: .9rem; }
+  .dialog-trip-list .trip-row { min-height: 44px; }
+  .dialog-trip-list .time-value { font-size: 1rem; }
+  .dialog-trip-list .trip-arrow { font-size: .95rem; }
+  .dialog-trip-list .is-past { color: var(--color-muted); text-decoration: line-through; }
+  .dialog-trip-list .is-shuttle { color: var(--color-danger); }
+  .dialog-final-label { margin: 12px 0 -2px; color: var(--color-danger); font-size: .8rem; font-weight: 700; text-align: center; }
+  .app-install-dialog { width: min(92vw, 430px); max-height: min(88vh, 700px); padding: 0; border: 0; border-radius: 24px; background: var(--color-surface-elevated); color: var(--color-text); box-shadow: var(--shadow-prompt); }
+  .app-install-dialog::backdrop { background: var(--color-backdrop); }
+  .app-install-inner { position: relative; padding: 32px 28px 26px; text-align: center; }
+  .app-install-close { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--color-text); font-size: 1.6rem; line-height: 1; }
+  .app-install-eyebrow { margin: 0; color: var(--color-tut-blue); font-size: .68rem; font-weight: 800; letter-spacing: .16em; }
+  .app-install-dialog h2 { margin: 12px 0 14px; color: var(--color-tut-blue); font-size: clamp(1.35rem, 5vw, 1.8rem); line-height: 1.3; }
+  .app-install-lead { max-width: 30ch; margin: 0 auto; font-size: .95rem; }
+  .app-install-actions { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 22px; }
+  .app-install-store { display: inline-flex; min-height: 55px; align-items: center; justify-content: center; border-radius: 8px; }
+  .app-install-store img { display: block; width: 167px; height: 55px; object-fit: contain; }
+  .app-install-details { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 8px 14px; border: 1px solid var(--color-border); border-radius: 10px; color: var(--color-tut-blue); font-size: .82rem; font-weight: 700; text-decoration: none; }
+  .app-install-note { margin: 20px 0 0; color: var(--color-muted); font-size: .72rem; }
+  .search-dialog { overflow: auto; }
+  .search-controls { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 10px; margin: 2px 0 8px; }
+  .search-date-label { display: flex; flex: 1 1 220px; flex-direction: column; gap: 4px; color: var(--color-muted); font-size: .8rem; font-weight: 700; }
+  .search-date-label input { width: 100%; min-height: 44px; padding: 8px 10px; border: 1px solid var(--color-outline); border-radius: 10px; background: var(--color-surface-elevated); color: var(--color-text); }
+  .search-submit { flex: 0 0 auto; }
+  .search-status { min-height: 1.6em; margin: 8px 0; color: var(--color-muted); font-size: .82rem; text-align: center; }
+  .search-status-error { color: var(--color-danger); }
+  .search-result { padding-top: 4px; }
+  .search-result-date { margin: 8px 0 2px; color: var(--color-text); font-size: 1.05rem; font-weight: 700; text-align: center; }
+  .search-operation-status { margin: 0 0 10px; color: var(--color-text); font-size: .82rem; text-align: center; }
+  .search-operation-status.is-alert { color: var(--color-danger); }
+  .search-endpoints { display: grid; grid-template-columns: 1fr 1fr; margin: 0 24px 1px; color: var(--color-muted); font-size: .7rem; text-align: center; }
+  .search-trip-list { margin: 1px 0 0; }
+  .search-trip-list .trip-row { min-height: 58px; }
+  .search-trip-list .time-value { font-size: 1.25rem; }
+  .search-final-label { margin: 12px 0 -2px; color: var(--color-danger); font-size: .8rem; font-weight: 700; text-align: center; }
+  .search-shuttle-row { display: flex; flex-direction: column; gap: 3px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--color-timetable-divider); color: var(--color-danger); text-align: center; }
+  .search-shuttle-row span { color: var(--color-text); font-size: 1.05rem; }
+  .search-trip-list .is-unknown { color: var(--color-muted); }
+  .search-empty-message { margin: 0; padding: 70px 0; color: var(--color-muted); font-size: 1.05rem; line-height: 1.7; text-align: center; white-space: pre-line; }
+  @media (max-width: 650px) {
+    .search-dialog { width: 100%; max-width: none; max-height: 88vh; margin: auto 0 0; border-radius: 22px 22px 0 0; }
+    .app-install-dialog { width: 100%; max-width: none; max-height: 88vh; margin: auto 0 0; border-radius: 24px 24px 0 0; }
+  }
+}

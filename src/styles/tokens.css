@@ -1,0 +1,99 @@
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+
+    /* iOS-derived semantic colors. Keep component styles independent from
+       the selected appearance so the browser can follow the user's OS. */
+    --color-background: #eef3f8;
+    --color-surface: #ffffff;
+    --color-surface-elevated: #ffffff;
+    --color-text: #333333;
+    --color-muted: #8e8e93;
+    --color-outline: #c6c6c8;
+    --color-card-border: #ffffff;
+    --color-timetable-divider: #c6c6c8;
+    --color-timetable-arrow: #333333;
+    --color-primary: #3a4d8d;
+    --color-on-primary: #ffffff;
+    --color-header-link: var(--color-primary);
+    --color-disabled: #b5b5b5;
+    --color-danger: #ff3b30;
+    --color-jr: #008803;
+    --color-keio-red: #c8006b;
+    --color-keio-blue: #00377e;
+
+    /* Existing aliases retained for the current Web UI contract. */
+    --color-tut-blue: var(--color-primary);
+    --color-tut-blue-dark: color-mix(in srgb, var(--color-primary) 72%, #000000 28%);
+    --color-tut-gray: var(--color-disabled);
+    --color-border: var(--color-outline);
+    --color-focus: var(--color-danger);
+    --color-surface-subtle: color-mix(in srgb, var(--color-surface) 92%, var(--color-background) 8%);
+    --color-notice-background: color-mix(in srgb, var(--color-danger) 10%, var(--color-surface) 90%);
+    --color-on-primary-muted: color-mix(in srgb, var(--color-on-primary) 80%, var(--color-primary) 20%);
+    --color-on-primary-soft: color-mix(in srgb, var(--color-on-primary) 88%, var(--color-primary) 12%);
+    --color-primary-soft: color-mix(in srgb, var(--color-primary) 9%, var(--color-surface) 91%);
+    --color-backdrop: color-mix(in srgb, #000000 38%, transparent);
+    --shadow-card: 0 14px 30px color-mix(in srgb, #000000 14%, transparent);
+    --shadow-ui: 0 3px 10px color-mix(in srgb, #000000 8%, transparent);
+    --shadow-dialog: 0 20px 70px color-mix(in srgb, #000000 30%, transparent);
+    --shadow-prompt: 0 24px 80px color-mix(in srgb, #000000 32%, transparent);
+    --radius-card: 30px;
+    --content-width: 750px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background: #101b2c;
+      --color-surface: #1b222f;
+      --color-surface-elevated: #2a3443;
+      --color-text: #eceef2;
+      --color-muted: #b0b8c6;
+      --color-outline: #3a4556;
+      --color-card-border: #4e5d72;
+      --color-timetable-divider: #596a82;
+      --color-timetable-arrow: #ffffff;
+      --color-disabled: #7a8699;
+      --color-header-link: var(--color-on-primary);
+      --color-surface-subtle: color-mix(in srgb, var(--color-surface) 88%, var(--color-background) 12%);
+      --color-notice-background: color-mix(in srgb, var(--color-danger) 15%, var(--color-surface) 85%);
+      --color-primary-soft: color-mix(in srgb, var(--color-primary) 24%, var(--color-surface) 76%);
+    }
+  }
+
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --color-background: #eef3f8;
+    --color-surface: #ffffff;
+    --color-surface-elevated: #ffffff;
+    --color-text: #333333;
+    --color-muted: #8e8e93;
+    --color-outline: #c6c6c8;
+    --color-card-border: #ffffff;
+    --color-timetable-divider: #c6c6c8;
+    --color-timetable-arrow: #333333;
+    --color-disabled: #b5b5b5;
+    --color-header-link: var(--color-primary);
+    --color-surface-subtle: color-mix(in srgb, var(--color-surface) 92%, var(--color-background) 8%);
+    --color-notice-background: color-mix(in srgb, var(--color-danger) 10%, var(--color-surface) 90%);
+    --color-primary-soft: color-mix(in srgb, var(--color-primary) 9%, var(--color-surface) 91%);
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --color-background: #101b2c;
+    --color-surface: #1b222f;
+    --color-surface-elevated: #2a3443;
+    --color-text: #eceef2;
+    --color-muted: #b0b8c6;
+    --color-outline: #3a4556;
+    --color-card-border: #4e5d72;
+    --color-timetable-divider: #596a82;
+    --color-timetable-arrow: #ffffff;
+    --color-disabled: #7a8699;
+    --color-header-link: var(--color-on-primary);
+    --color-surface-subtle: color-mix(in srgb, var(--color-surface) 88%, var(--color-background) 12%);
+    --color-notice-background: color-mix(in srgb, var(--color-danger) 15%, var(--color-surface) 85%);
+    --color-primary-soft: color-mix(in srgb, var(--color-primary) 24%, var(--color-surface) 76%);
+  }
+}
