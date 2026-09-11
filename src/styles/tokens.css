@@ -16,6 +16,10 @@
     --color-primary: #3a4d8d;
     --color-on-primary: #ffffff;
     --color-header-link: var(--color-primary);
+    --color-direction-tab-active: var(--color-tut-blue);
+    --color-direction-tab-inactive: var(--color-muted);
+    --color-direction-tab-line: var(--color-tut-blue);
+    --color-dialog-title: var(--color-tut-blue);
     --color-disabled: #b5b5b5;
     --color-danger: #ff3b30;
     --color-jr: #008803;
@@ -55,6 +59,10 @@
       --color-timetable-arrow: #ffffff;
       --color-disabled: #7a8699;
       --color-header-link: var(--color-on-primary);
+      --color-direction-tab-active: var(--color-on-primary);
+      --color-direction-tab-inactive: var(--color-tut-blue);
+      --color-direction-tab-line: var(--color-muted);
+      --color-dialog-title: var(--color-on-primary);
       --color-surface-subtle: color-mix(in srgb, var(--color-surface) 88%, var(--color-background) 12%);
       --color-notice-background: color-mix(in srgb, var(--color-danger) 15%, var(--color-surface) 85%);
       --color-primary-soft: color-mix(in srgb, var(--color-primary) 24%, var(--color-surface) 76%);
@@ -74,6 +82,10 @@
     --color-timetable-arrow: #333333;
     --color-disabled: #b5b5b5;
     --color-header-link: var(--color-primary);
+    --color-direction-tab-active: var(--color-tut-blue);
+    --color-direction-tab-inactive: var(--color-muted);
+    --color-direction-tab-line: var(--color-tut-blue);
+    --color-dialog-title: var(--color-tut-blue);
     --color-surface-subtle: color-mix(in srgb, var(--color-surface) 92%, var(--color-background) 8%);
     --color-notice-background: color-mix(in srgb, var(--color-danger) 10%, var(--color-surface) 90%);
     --color-primary-soft: color-mix(in srgb, var(--color-primary) 9%, var(--color-surface) 91%);
@@ -92,6 +104,10 @@
     --color-timetable-arrow: #ffffff;
     --color-disabled: #7a8699;
     --color-header-link: var(--color-on-primary);
+    --color-direction-tab-active: var(--color-on-primary);
+    --color-direction-tab-inactive: var(--color-tut-blue);
+    --color-direction-tab-line: var(--color-muted);
+    --color-dialog-title: var(--color-on-primary);
     --color-surface-subtle: color-mix(in srgb, var(--color-surface) 88%, var(--color-background) 12%);
     --color-notice-background: color-mix(in srgb, var(--color-danger) 15%, var(--color-surface) 85%);
     --color-primary-soft: color-mix(in srgb, var(--color-primary) 24%, var(--color-surface) 76%);

@@ -3,7 +3,7 @@
   .app-page { overflow: hidden; }
   .app-header { display: flex; align-items: center; justify-content: space-between; max-width: 1180px; margin: 0 auto; padding: 18px clamp(18px, 4vw, 52px); }
   .app-header-start { display: flex; align-items: center; min-width: 0; }
-  .app-back { color: var(--color-tut-blue); font-weight: 700; text-decoration: none; }
+  .app-back { color: var(--color-header-link); font-weight: 700; text-decoration: none; }
   .app-header-label { color: var(--color-muted); font-size: .75rem; font-weight: 700; }
   .app-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 360px); align-items: center; gap: clamp(30px, 7vw, 96px); min-height: min(680px, 82vh); padding: clamp(56px, 10vw, 130px) max(18px, calc((100% - 1080px) / 2)); background: linear-gradient(135deg, var(--color-tut-blue-dark), var(--color-primary)); color: var(--color-on-primary); }
   .app-hero-copy { max-width: 610px; min-width: 0; }
@@ -18,6 +18,7 @@
   .unofficial-note { margin: 28px 0 0; color: var(--color-on-primary-soft); font-size: .75rem; }
   .app-screen-frame { margin: 0; overflow: hidden; border: 1px solid color-mix(in srgb, var(--color-on-primary) 30%, transparent); border-radius: 30px; background: var(--color-surface); box-shadow: 0 24px 60px color-mix(in srgb, #000 28%, transparent); }
   .app-screen-frame img { display: block; width: 100%; height: auto; }
+  .app-screen-caption { padding: 9px 12px 11px; border-top: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-muted); font-size: .75rem; font-weight: 700; text-align: center; }
   .app-hero-screen { width: min(100%, 360px); justify-self: end; transform: rotate(2deg); }
   .app-section { padding: clamp(56px, 8vw, 110px) max(18px, calc((100% - 1080px) / 2)); }
   .app-section-light { background: var(--color-surface); }
@@ -57,9 +58,14 @@
   .download-section { text-align: center; }
   .download-section .section-heading { justify-content: flex-start; text-align: left; }
   .download-section > p { max-width: 48ch; margin-right: auto; margin-left: auto; }
-  .store-links { display: flex; justify-content: center; min-height: 55px; margin: 24px 0 6px; }
+  .store-links { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: center; gap: 20px; min-height: 55px; margin: 24px 0 6px; }
+  .store-item { display: flex; min-width: 205px; flex-direction: column; align-items: center; justify-content: flex-end; }
   .store-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 8px; }
   .store-link img { display: block; width: 167px; height: 55px; object-fit: contain; }
+  .android-store-coming-soon > p { margin: 0 0 8px; color: var(--color-on-primary); font-size: .85rem; font-weight: 800; }
+  .android-store-badge { position: relative; display: inline-flex; width: 150px; aspect-ratio: 270 / 80; overflow: hidden; border-radius: 7px; }
+  .android-store-badge img { display: block; width: 100%; height: auto; }
+  .android-store-overlay { position: absolute; inset: 0; background: rgba(112, 117, 122, .56); pointer-events: none; }
   .store-disclaimer { color: var(--color-on-primary-soft); font-size: .75rem; }
   .app-footer { padding: 30px 18px; background: var(--color-surface); color: var(--color-muted); font-size: .78rem; text-align: center; }
   .app-footer-notice { max-width: 640px; margin: 0 auto 24px; text-align: center; }

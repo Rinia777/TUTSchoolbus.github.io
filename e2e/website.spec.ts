@@ -83,9 +83,14 @@ test('follows the browser color scheme across timetable, app, and legal pages', 
   await expect(page.locator('.timetable-main')).toHaveCSS('background-color', 'rgb(16, 27, 44)');
   await expect(page.locator('.route-card').first()).toHaveCSS('background-color', 'rgb(27, 34, 47)');
   await expect(page.getByRole('link', { name: 'スマホアプリはこちらから！' })).toHaveCSS('color', 'rgb(255, 255, 255)');
+  await expect(page.getByRole('tab', { name: /登校/ })).toHaveCSS('color', 'rgb(255, 255, 255)');
+  await expect(page.getByRole('tab', { name: /登校/ })).toHaveCSS('border-bottom-color', 'rgb(176, 184, 198)');
+  await expect(page.getByRole('tab', { name: /下校/ })).toHaveCSS('color', 'rgb(58, 77, 141)');
 
   await page.goto('/app/');
   await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(16, 27, 44)');
+  await expect(page.locator('.app-back')).toHaveText('Web時刻表はこちら');
+  await expect(page.locator('.app-back')).toHaveCSS('color', 'rgb(255, 255, 255)');
   await expect(page.locator('.app-section-light').first()).toHaveCSS('background-color', 'rgb(27, 34, 47)');
 
   await page.goto('/kiyaku.html');
@@ -96,6 +101,9 @@ test('follows the browser color scheme across timetable, app, and legal pages', 
   await page.goto('/');
   await expect(page.locator('.timetable-main')).toHaveCSS('background-color', 'rgb(238, 243, 248)');
   await expect(page.locator('.route-card').first()).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+  await expect(page.getByRole('tab', { name: /登校/ })).toHaveCSS('color', 'rgb(58, 77, 141)');
+  await expect(page.getByRole('tab', { name: /登校/ })).toHaveCSS('border-bottom-color', 'rgb(58, 77, 141)');
+  await expect(page.getByRole('tab', { name: /下校/ })).toHaveCSS('color', 'rgb(142, 142, 147)');
 });
 
 test('manual theme toggle overrides the system and is shared with legal pages', async ({ page }) => {
@@ -128,6 +136,12 @@ test('shows the app install prompt to first-time visitors and remembers dismissa
   const promptBadge = prompt.locator('[data-app-promo-store] img');
   await expect(promptBadge).toHaveAttribute('src', /app-store-badge-ja-black-[^/]+\.svg/);
   expect(await promptBadge.evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
+  const promptAndroid = prompt.locator('.app-install-android-coming-soon');
+  await expect(promptAndroid).toContainText('Androidアプリも開発中！');
+  await expect(promptAndroid.locator('img')).toHaveAttribute('src', /google-play-badge-ja-[^/]+\.png/);
+  await expect(promptAndroid.locator('.app-install-android-badge')).toHaveCSS('width', '150px');
+  expect(await promptAndroid.locator('img').evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
+  await expect(promptAndroid.locator('.app-install-android-overlay')).toHaveCSS('background-color', 'rgba(112, 117, 122, 0.56)');
   await expect(prompt.locator('[data-app-promo-details]')).toHaveAttribute('href', './app/');
   await expect(prompt.locator('a[href*="play.google.com"]')).toHaveCount(0);
 
@@ -219,7 +233,7 @@ test('timetable search fetches and displays a selected date', async ({ page }) =
   await expect(searchButton).toBeFocused();
 });
 
-test('app page has confirmed iOS, X, and email links but no unconfirmed Android placeholders', async ({ page }) => {
+test('app page shows development screenshots and a non-interactive Android download notice', async ({ page }) => {
   await page.goto('/app/');
   await expect(page.getByRole('heading', { name: /東京工科大学.*スクールバスアプリ/ })).toBeVisible();
   await expect(page.getByRole('heading', { name: '対応状況' })).toHaveCount(0);
@@ -237,6 +251,11 @@ test('app page has confirmed iOS, X, and email links but no unconfirmed Android 
   await expect(page.locator('.app-footer-notice')).toContainText('実際の運行と異なる場合があります。');
   await expect(page.locator('.app-footer-notice a')).toHaveText('大学公式の交通案内を確認する');
   await expect(page.locator('.download-section .section-heading')).toHaveCSS('justify-content', 'flex-start');
+  await expect(page.locator('.app-screen-caption')).toHaveText([
+    '開発中の写真です。',
+    '開発中の写真です。',
+    '開発中の写真です。',
+  ]);
   await expect(page.locator('a[href*="apps.apple.com"]')).toHaveCount(1);
   await expect(page.locator('a[href*="apps.apple.com"] img')).toHaveCSS('width', '167px');
   await expect(page.locator('a[href*="apps.apple.com"] img')).toHaveCSS('height', '55px');
@@ -244,6 +263,12 @@ test('app page has confirmed iOS, X, and email links but no unconfirmed Android 
   expect(await page.locator('a[href*="apps.apple.com"] img').evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
   await expect(page.locator('a[href*="x.com/tut__app"]')).toHaveCount(1);
   await expect(page.locator('.app-footer a[href="mailto:rin.ichikawa.appcreate@gmail.com"]')).toHaveText('お問い合わせ');
+  const androidNotice = page.locator('.android-store-coming-soon');
+  await expect(androidNotice).toContainText('Androidアプリも開発中！');
+  await expect(androidNotice.locator('img')).toHaveAttribute('src', /google-play-badge-ja-[^/]+\.png/);
+  await expect(androidNotice.locator('.android-store-badge')).toHaveCSS('width', '150px');
+  expect(await androidNotice.locator('img').evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
+  await expect(androidNotice.locator('.android-store-overlay')).toHaveCSS('background-color', 'rgba(112, 117, 122, 0.56)');
   await expect(page.locator('a[href*="play.google.com"]')).toHaveCount(0);
   await expect(page.locator('a[href*="t.co/0LTkBLx0jX"]')).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'Web時刻表' }).first()).toHaveAttribute('href', '../');

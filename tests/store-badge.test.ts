@@ -15,3 +15,13 @@ describe('App Store badge', () => {
     expect(badge).not.toMatch(/<script|<foreignObject|xlink:href|\shref=/i);
   });
 });
+
+describe('Google Play badge', () => {
+  it('shows the official badge as a non-interactive development notice on both pages', () => {
+    expect(timetableHtml).toContain('./assets/google-play-badge-ja.png');
+    expect(timetableHtml).toContain('Androidアプリも開発中！');
+    expect(appHtml).toContain('../assets/google-play-badge-ja.png');
+    expect(appHtml).toContain('Androidアプリも開発中！');
+    expect(`${timetableHtml}\n${appHtml}`).not.toContain('href="https://play.google.com');
+  });
+});
