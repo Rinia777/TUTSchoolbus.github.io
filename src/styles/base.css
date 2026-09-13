@@ -5,7 +5,7 @@
   button, a { font: inherit; }
   a { color: inherit; }
   button { cursor: pointer; }
-  :focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
+  :focus, :focus-visible { outline: none; }
   [hidden] { display: none !important; }
   .site-shell { min-height: 100vh; }
   .site-header { position: relative; display: grid; grid-template-columns: auto 1fr; align-items: center; min-height: 76px; padding: 8px 12px 11px; background: var(--color-surface); }
