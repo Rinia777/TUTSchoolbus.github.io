@@ -6,99 +6,52 @@ import sitemap from '../public/sitemap.xml?raw';
 import termsHtml from '../kiyaku.html?raw';
 import timetableHtml from '../index.html?raw';
 
-describe('公開HTMLのメタデータと外観契約', () => {
-  it('keeps titles, share metadata, structured data, and sitemap URLs', () => {
+describe('旧サイトの移行案内', () => {
+  it('Web時刻表とアプリ紹介を新ドメインへ案内する', () => {
     const pages = [
       {
         html: timetableHtml,
-        title: '東京工科大学 スクールバス時刻表（八王子キャンパス）｜非公式',
-        canonical: 'https://rinia777.github.io/TUTSchoolbus.github.io/',
-        structuredType: 'WebSite',
+        heading: 'Web時刻表は新しいドメインへ移行しました',
+        canonical: 'https://tut-app.rin-works.net/',
+        links: ['https://tut-app.rin-works.net/', 'https://tut-app.rin-works.net/app/'],
       },
       {
         html: appHtml,
-        title: '東京工科大学スクールバスアプリ｜非公式アプリ',
-        canonical: 'https://rinia777.github.io/TUTSchoolbus.github.io/app/',
-        structuredType: 'SoftwareApplication',
+        heading: 'アプリ紹介ページは新しいドメインへ移行しました',
+        canonical: 'https://tut-app.rin-works.net/app/',
+        links: ['https://tut-app.rin-works.net/app/', 'https://tut-app.rin-works.net/'],
       },
     ] as const;
 
     for (const page of pages) {
-      expect(page.html).toContain(`<title>${page.title}</title>`);
-      expect(page.html).toContain(`<link rel="canonical" href="${page.canonical}"`);
-
-      for (const property of ['og:type', 'og:title', 'og:description', 'og:url', 'og:image']) {
-        expect(page.html).toMatch(new RegExp(`<meta property="${property}" content="[^"]+"`));
-      }
-      for (const name of ['twitter:card', 'twitter:site', 'twitter:title', 'twitter:description', 'twitter:image']) {
-        expect(page.html).toMatch(new RegExp(`<meta name="${name}" content="[^"]+"`));
-      }
-
-      const jsonLd = page.html.match(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/);
-      expect(jsonLd).not.toBeNull();
-      expect(JSON.parse(jsonLd?.[1] ?? '{}')).toMatchObject({
-        '@type': page.structuredType,
-        url: page.canonical,
-      });
+      expect(page.html).toContain(`<h1>${page.heading}</h1>`);
+      expect(page.html).toContain('<meta name="robots" content="noindex,follow" />');
+      expect(page.html).toContain(`<link rel="canonical" href="${page.canonical}" />`);
+      expect(page.html).not.toMatch(/<script\b/i);
+      for (const link of page.links) expect(page.html).toContain(`href="${link}"`);
+      expect(page.html).toContain('kiyaku.html');
+      expect(page.html).toContain('poricy.html');
     }
 
-    for (const url of [
-      'https://rinia777.github.io/TUTSchoolbus.github.io/',
-      'https://rinia777.github.io/TUTSchoolbus.github.io/app/',
-      'https://rinia777.github.io/TUTSchoolbus.github.io/kiyaku.html',
-      'https://rinia777.github.io/TUTSchoolbus.github.io/poricy.html',
-    ]) {
-      expect(sitemap).toContain(`<loc>${url}</loc>`);
-    }
-  });
+    expect(timetableHtml).toContain('東京工科大学への本サイトに関するお問い合わせはお控えください。');
+    expect(appHtml).toContain('本アプリおよび本サイトに関しての問い合わせを東京工科大学に行わないでください。');
 
-  it('keeps canonical pages, SEO metadata, and shared browser appearance metadata', () => {
-    const canonicalPages = [
-      [timetableHtml, 'https://rinia777.github.io/TUTSchoolbus.github.io/'],
-      [appHtml, 'https://rinia777.github.io/TUTSchoolbus.github.io/app/'],
-      [termsHtml, 'https://rinia777.github.io/TUTSchoolbus.github.io/kiyaku.html'],
-      [privacyHtml, 'https://rinia777.github.io/TUTSchoolbus.github.io/poricy.html'],
-    ] as const;
-
-    for (const [page, canonical] of canonicalPages) {
-      expect(page).toContain(`<link rel="canonical" href="${canonical}"`);
-      expect(page).toContain('name="color-scheme" content="light dark"');
-      expect(page).toContain('name="theme-color" media="(prefers-color-scheme: light)" content="#EEF3F8"');
-      expect(page).toContain('name="theme-color" media="(prefers-color-scheme: dark)" content="#101B2C"');
-      expect(page).toContain('rel="icon"');
-      expect(page).toContain('app-icon.png');
-    }
-
-    expect(timetableHtml).toContain('name="description" content="東京工科大学・八王子キャンパスのスクールバス予定時刻を確認できる非公式Web時刻表です。');
-    expect(appHtml).toContain('name="description" content="東京工科大学・八王子キャンパスのスクールバス予定時刻を手軽に確認できる非公式iOSアプリの紹介ページです。');
-    expect(timetableHtml).toContain('data-theme-toggle');
-    expect(appHtml).toContain('data-theme-toggle');
-    expect(timetableHtml).toContain('data-theme-image="dark"');
-    expect(appHtml).toContain('data-theme-image="dark"');
-
-    for (const page of [termsHtml, privacyHtml]) {
-      expect(page).toContain('color-scheme: light dark');
-      expect(page).toContain('--legal-background: #EEF3F8');
-      expect(page).toContain('--legal-background: #101B2C');
-    }
-
+    expect(sitemap).not.toContain('https://rinia777.github.io/TUTSchoolbus.github.io/</loc>');
+    expect(sitemap).not.toContain('https://rinia777.github.io/TUTSchoolbus.github.io/app/</loc>');
+    expect(sitemap).toContain('https://rinia777.github.io/TUTSchoolbus.github.io/kiyaku.html');
+    expect(sitemap).toContain('https://rinia777.github.io/TUTSchoolbus.github.io/poricy.html');
   });
 });
 
-describe('ストア掲載物と公開文言', () => {
-  it('keeps the local store badges and non-interactive Android notice on both pages', () => {
-    expect(timetableHtml).toContain('./assets/app-store-badge-ja-black.svg');
-    expect(appHtml).toContain('../assets/app-store-badge-ja-black.svg');
-    expect(timetableHtml).toContain('./assets/google-play-badge-ja.png');
-    expect(appHtml).toContain('../assets/google-play-badge-ja.png');
-    expect(`${timetableHtml}\n${appHtml}`).toContain('Androidアプリも開発中！');
-    expect(`${timetableHtml}\n${appHtml}`).not.toContain('tools.applemediaservices.com');
-    expect(`${timetableHtml}\n${appHtml}`).not.toContain('href="https://play.google.com');
-    expect(appHtml).toContain('東京工科大学スクールバスアプリ');
-    expect(appHtml).toContain('本アプリは卒業生が運営している非公式アプリです。');
+describe('旧法務ページと公開素材', () => {
+  it('旧規約・プライバシーポリシーのURLと問い合わせ先を維持する', () => {
+    expect(termsHtml).toContain('mailto:rin.ichikawa.appcreate@gmail.com');
+    expect(privacyHtml).toContain('mailto:rin.ichikawa.appcreate@gmail.com');
+    expect(termsHtml).not.toContain('support@rin-works.net');
+    expect(privacyHtml).not.toContain('support@rin-works.net');
   });
 
-  it('keeps the downloaded source SVG self-contained', () => {
+  it('公式App StoreバッジのSVGを自己完結したまま保持する', () => {
     expect(badge).toContain('<svg id="JP"');
     expect(badge).not.toMatch(/<script|<foreignObject|xlink:href|\shref=/i);
   });

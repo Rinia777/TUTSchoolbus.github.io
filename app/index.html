@@ -3,200 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#EEF3F8" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101B2C" />
-    <meta name="description" content="東京工科大学・八王子キャンパスのスクールバス予定時刻を手軽に確認できる非公式iOSアプリの紹介ページです。" />
-    <link rel="canonical" href="https://rinia777.github.io/TUTSchoolbus.github.io/app/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="ja_JP" />
-    <meta property="og:title" content="東京工科大学スクールバスアプリ｜非公式アプリ" />
-    <meta property="og:description" content="東京工科大学・八王子キャンパスのスクールバス予定時刻を手軽に確認できる非公式iOSアプリの紹介ページです。" />
-    <meta property="og:url" content="https://rinia777.github.io/TUTSchoolbus.github.io/app/" />
-    <meta property="og:image" content="https://rinia777.github.io/TUTSchoolbus.github.io/app-icon.png" />
-    <meta property="og:image:width" content="1024" />
-    <meta property="og:image:height" content="1024" />
-    <meta property="og:image:alt" content="東京工科大学スクールバスアプリのアイコン" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@tut__app" />
-    <meta name="twitter:title" content="東京工科大学スクールバスアプリ｜非公式アプリ" />
-    <meta name="twitter:description" content="東京工科大学・八王子キャンパスのスクールバス予定時刻を手軽に確認できる非公式iOSアプリの紹介ページです。" />
-    <meta name="twitter:image" content="https://rinia777.github.io/TUTSchoolbus.github.io/app-icon.png" />
-    <link rel="icon" type="image/png" sizes="1024x1024" href="../app-icon.png" />
-    <link rel="icon" type="image/png" sizes="1024x1024" href="../app-icon-dark.png" media="(prefers-color-scheme: dark)" data-theme-image="dark" />
-    <link rel="apple-touch-icon" sizes="1024x1024" href="../app-icon.png" />
-    <script>
-      try {
-        const mode = localStorage.getItem('tut-web-appearance-mode');
-        if (mode === 'light' || mode === 'dark') {
-          document.documentElement.dataset.theme = mode;
-          document.querySelectorAll('[data-theme-image="dark"]').forEach((asset) => { asset.media = mode === 'dark' ? 'all' : 'not all'; });
-        }
-      } catch (_) {}
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "東京工科大学スクールバスアプリ",
-        "operatingSystem": "iOS",
-        "applicationCategory": "TravelApplication",
-        "url": "https://rinia777.github.io/TUTSchoolbus.github.io/app/",
-        "installUrl": "https://apps.apple.com/jp/app/id6758648706",
-        "inLanguage": "ja",
-        "description": "東京工科大学・八王子キャンパスのスクールバス予定時刻を手軽に確認できる非公式iOSアプリです。"
-      }
-    </script>
-    <title>東京工科大学スクールバスアプリ｜非公式アプリ</title>
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href="https://tut-app.rin-works.net/app/" />
+    <title>サイト移行のお知らせ｜東京工科大学スクールバスアプリ</title>
+    <style>
+      :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; color: #172033; background: #eef3f8; }
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; box-sizing: border-box; }
+      main { width: min(100%, 640px); box-sizing: border-box; padding: 32px; background: #fff; border: 1px solid #dce4ee; border-radius: 20px; box-shadow: 0 12px 32px rgb(32 53 80 / 10%); }
+      .kicker { margin: 0 0 12px; color: #2c6da4; font-size: .8rem; font-weight: 700; letter-spacing: .12em; }
+      h1 { margin: 0 0 20px; font-size: clamp(1.5rem, 5vw, 2rem); line-height: 1.45; }
+      p { line-height: 1.8; }
+      nav { display: grid; gap: 12px; margin: 24px 0; }
+      nav a { display: block; padding: 14px 16px; border-radius: 10px; background: #1666a8; color: #fff; text-decoration: none; font-weight: 700; }
+      nav a:hover, nav a:focus-visible { background: #0d4f87; }
+      .legal { margin-top: 24px; font-size: .9rem; }
+      .legal a { color: #1666a8; }
+    </style>
   </head>
-  <body class="app-page-body">
-    <div class="app-page">
-      <header class="app-header">
-        <div class="app-header-start">
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="ナイトモードに切り替える" aria-pressed="false">
-            <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path></svg>
-            <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"></path></svg>
-          </button>
-          <a class="app-back" href="../">Web時刻表はこちら</a>
-        </div>
-        <span class="app-header-label">非公式アプリ</span>
-      </header>
-
-      <main>
-        <section class="app-hero">
-          <div class="app-hero-copy">
-            <p class="section-kicker">TUT SCHOOL BUS APP</p>
-            <h1>東京工科大学<br />スクールバスアプリ</h1>
-            <p class="hero-lead">次のスクールバスを、すぐ確認。</p>
-            <p class="hero-description">東京工科大学のスクールバス時刻表を、もっと手軽に。八王子駅・八王子みなみ野駅・学生会館の3ルートに対応しています。</p>
-            <div class="hero-actions">
-              <a class="primary-cta" href="#download">アプリをダウンロード</a>
-              <a class="secondary-cta" href="../">Web時刻表を開く</a>
-            </div>
-            <p class="unofficial-note">本アプリは卒業生が運営している非公式アプリです。</p>
-          </div>
-          <figure class="app-screen-frame app-hero-screen">
-            <img
-              src="../assets/images/app/screenshots/next-three-buses-light.png"
-              srcset="../assets/images/app/screenshots/next-three-buses-light-590.png 590w, ../assets/images/app/screenshots/next-three-buses-light.png 1179w"
-              sizes="(max-width: 650px) 78vw, 360px"
-              width="1179"
-              height="2080"
-              loading="eager"
-              fetchpriority="high"
-              alt="東京工科大学スクールバスアプリで、大学から八王子駅へ向かう直近3便と次のバスまでの時間を表示している画面例"
-            />
-            <figcaption class="app-screen-caption">開発中の写真です。</figcaption>
-          </figure>
-        </section>
-
-        <section class="app-section app-section-light" id="about">
-          <div class="section-heading"><span>01</span><div><p class="section-kicker">ABOUT</p><h2>アプリについて</h2></div></div>
-          <div class="section-copy"><p>登校前や帰宅前に、いちばん近いスクールバスの予定時刻を確認できます。方向とルートを選ぶと、現在時刻に合わせた次の便が表示されます。</p><p class="muted-copy">表示時刻は大学公式の時刻表に基づく予定時刻です。バスの現在位置や遅延状況をリアルタイムに表示するものではありません。</p></div>
-        </section>
-
-        <section class="app-section app-section-blue" id="features">
-          <div class="section-heading"><span>02</span><div><p class="section-kicker">FEATURES</p><h2>主な機能</h2></div></div>
-          <div class="feature-grid">
-            <article class="feature-card"><span class="feature-number">01</span><h3>直近最大3便をひと目で</h3><p>現在時刻から直近最大3便の発車・到着予定時刻を表示。登校・下校と3ルートに対応しています。</p></article>
-            <article class="feature-card"><span class="feature-number">02</span><h3>本日・明日の時刻表</h3><p>「本日の時刻表」と「明日の時刻表」から、全便を一覧で確認できます。</p></article>
-            <article class="feature-card"><span class="feature-number">03</span><h3>臨時時刻表にも対応</h3><p>通常運行だけでなく、臨時ダイヤ、シャトル、運休などの状態も表示します。</p></article>
-            <article class="feature-card"><span class="feature-number">04</span><h3>交通情報へすぐアクセス</h3><p>八王子駅・八王子みなみ野駅で利用する路線など、各鉄道会社の公式サイト・SNSへの導線をまとめています。</p></article>
-            <article class="feature-card"><span class="feature-number">05</span><h3>学内サイトへのリンク</h3><p>アプリ内のボタンから、必要な学内サイトを開けます。</p></article>
-          </div>
-          <div class="feature-screen-showcase" aria-label="アプリ画面の紹介">
-            <article class="feature-screen-row">
-              <div class="feature-screen-copy">
-                <span class="feature-number">SCREEN 01</span>
-                <h3>今日の流れを、一覧で確認</h3>
-                <p>過去の便から本日の最終バスまで、発車・到着予定時刻をまとめて確認できます。</p>
-              </div>
-              <figure class="app-screen-frame feature-screen-frame">
-                <img
-                  src="../assets/images/app/screenshots/today-timetable-light.png"
-                  srcset="../assets/images/app/screenshots/today-timetable-light-590.png 590w, ../assets/images/app/screenshots/today-timetable-light.png 1179w"
-                  sizes="(max-width: 650px) 78vw, 320px"
-                  width="1179"
-                  height="2556"
-                  loading="lazy"
-                  alt="本日の時刻表で、通過済みの便から本日の最終バスまでを一覧表示している画面例"
-                />
-                <figcaption class="app-screen-caption">開発中の写真です。</figcaption>
-              </figure>
-            </article>
-            <article class="feature-screen-row feature-screen-row-reverse">
-              <div class="feature-screen-copy">
-                <span class="feature-number">SCREEN 02</span>
-                <h3>電車の運行情報へ、すぐ移動</h3>
-                <p>JR・京王・東急の公式サイトや公式SNSへの入口をまとめています。</p>
-              </div>
-              <figure class="app-screen-frame feature-screen-frame">
-                <img
-                  src="../assets/images/app/screenshots/traffic-info-light.png"
-                  srcset="../assets/images/app/screenshots/traffic-info-light-590.png 590w, ../assets/images/app/screenshots/traffic-info-light.png 1179w"
-                  sizes="(max-width: 650px) 78vw, 320px"
-                  width="1179"
-                  height="1720"
-                  loading="lazy"
-                  alt="JR・京王・東急の公式運行情報と公式SNSへのリンクを並べた交通情報画面例"
-                />
-                <figcaption class="app-screen-caption">開発中の写真です。</figcaption>
-              </figure>
-            </article>
-          </div>
-        </section>
-
-        <section class="app-section app-section-light" id="how-to-use">
-          <div class="section-heading"><span>03</span><div><p class="section-kicker">HOW TO USE</p><h2>使い方</h2></div></div>
-          <ol class="steps-list"><li><strong>方向を選ぶ</strong><span>登校（大学方面）または下校（駅・学生会館方面）を選択します。</span></li><li><strong>ルートを選ぶ</strong><span>八王子駅、八王子みなみ野駅、学生会館から選べます。</span></li><li><strong>次の便を確認する</strong><span>直近の予定、または本日・明日の全時刻表を確認します。</span></li></ol>
-        </section>
-
-        <section class="app-section app-section-gray" id="recommended">
-          <div class="section-heading"><span>04</span><div><p class="section-kicker">RECOMMENDED</p><h2>こんな方におすすめ</h2></div></div>
-          <div class="recommend-list">
-            <article class="recommend-card"><span class="recommend-number">R01</span><h3>通学前に、次のバスをすぐ確認したい方</h3><p>現在時刻に合わせた直近最大3便を、発車・到着予定時刻で確認できます。</p></article>
-            <article class="recommend-card"><span class="recommend-number">R02</span><h3>利用する駅や方向を切り替えて使いたい方</h3><p>八王子駅・八王子みなみ野駅・学生会館の3ルートと、登校・下校の両方向を同じ時刻表画面で切り替えられます。</p></article>
-            <article class="recommend-card"><span class="recommend-number">R03</span><h3>今日・明日の予定を先に確認しておきたい方</h3><p>直近便だけでなく、本日と明日の全時刻表を確認できます。</p></article>
-            <article class="recommend-card"><span class="recommend-number">R04</span><h3>臨時ダイヤや運休を見落としたくない方</h3><p>通常便だけでなく、臨時・シャトル・運休などの状態を確認できます。</p></article>
-          </div>
-        </section>
-
-        <section class="app-section app-section-blue download-section" id="download">
-          <div class="section-heading"><span>05</span><div><p class="section-kicker">DOWNLOAD</p><h2>ダウンロード</h2></div></div>
-          <p>東京工科大学のスクールバスを利用する日に、ぜひご活用ください。</p>
-          <div class="store-links">
-            <div class="store-item">
-              <a class="store-link" href="https://apps.apple.com/jp/app/%E6%9D%B1%E4%BA%AC%E5%B7%A5%E7%A7%91%E5%A4%A7%E5%AD%A6%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB%E3%83%90%E3%82%B9%E3%82%A2%E3%83%97%E3%83%AA/id6758648706" target="_blank" rel="noopener noreferrer"><img src="../assets/app-store-badge-ja-black.svg" width="167" height="55" alt="App Storeからダウンロード" /></a>
-            </div>
-            <div class="store-item android-store-coming-soon" aria-label="Androidアプリも開発中！">
-              <p>Androidアプリも開発中！</p>
-              <span class="android-store-badge" aria-hidden="true">
-                <img src="../assets/google-play-badge-ja.png" width="270" height="80" alt="" />
-                <span class="android-store-overlay"></span>
-              </span>
-            </div>
-          </div>
-        </section>
-
-      </main>
-
-      <footer class="app-footer">
-        <section class="app-footer-notice" aria-label="本サイトについての注意">
-          <p>本アプリは卒業生が運営している非公式アプリです。<br />本アプリおよび本サイトに関しての問い合わせを東京工科大学に行わないでください。</p>
-          <p>表示時刻は予定であり、<br />実際の運行と異なる場合があります。</p>
-          <a href="https://www.teu.ac.jp/campus/access/006644.html" target="_blank" rel="noopener noreferrer">大学公式の交通案内を確認する</a>
-        </section>
-        <nav class="app-footer-links" aria-label="アプリ紹介ページの情報">
-          <a href="https://x.com/tut__app" target="_blank" rel="noopener noreferrer">X（@tut__app）</a>
-          <a href="mailto:rin.ichikawa.appcreate@gmail.com">お問い合わせ</a>
-          <a href="../kiyaku.html">利用規約</a>
-          <a href="../poricy.html">プライバシーポリシー</a>
-          <a href="../">Web時刻表</a>
-        </nav>
-        <p>AppleおよびAppleのロゴは、米国その他の国や地域で登録されたApple Inc.の商標です。App StoreはApple Inc.のサービスマークです。</p>
-        <p>© 東京工科大学スクールバスアプリ</p>
-      </footer>
-    </div>
-    <script type="module" src="../src/app-page.ts"></script>
+  <body>
+    <main>
+      <p class="kicker">SITE MIGRATION</p>
+      <h1>アプリ紹介ページは新しいドメインへ移行しました</h1>
+      <p>東京工科大学スクールバスアプリの紹介ページとWeb時刻表は、下記の新しいドメインで提供しています。</p>
+      <nav aria-label="新しいサイトへのリンク">
+        <a href="https://tut-app.rin-works.net/app/">新しいアプリ紹介ページを開く</a>
+        <a href="https://tut-app.rin-works.net/">新しいWeb時刻表を開く</a>
+      </nav>
+      <p class="legal">利用規約とプライバシーポリシーは、移行前のURLでも引き続き確認できます。<br /><a href="../kiyaku.html">利用規約</a> ／ <a href="../poricy.html">プライバシーポリシー</a></p>
+      <p>本アプリは卒業生が運営している非公式アプリです。<br />本アプリおよび本サイトに関しての問い合わせを東京工科大学に行わないでください。</p>
+    </main>
   </body>
 </html>
