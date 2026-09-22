@@ -1,233 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#EEF3F8">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101B2C">
-    <meta name="description" content="東京工科大学スクールバス情報サービスの利用規約です。">
-    <link rel="canonical" href="https://rinia777.github.io/TUTSchoolbus.github.io/kiyaku.html">
-    <link rel="icon" type="image/png" sizes="1024x1024" href="./app-icon.png">
-    <link rel="icon" type="image/png" sizes="1024x1024" href="./app-icon-dark.png" media="(prefers-color-scheme: dark)">
-    <link rel="apple-touch-icon" sizes="1024x1024" href="./app-icon.png">
-    <title>利用規約 | 東京工科大学スクールバス情報サービス</title>
-    <script>
-        try {
-            const mode = localStorage.getItem('tut-web-appearance-mode');
-            if (mode === 'light' || mode === 'dark') document.documentElement.dataset.theme = mode;
-        } catch (_) {}
-    </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,follow" />
+    <meta http-equiv="refresh" content="0; url=https://tut-app.rin-works.net/terms.html" />
+    <link rel="canonical" href="https://tut-app.rin-works.net/terms.html" />
+    <title>利用規約の移行案内</title>
     <style>
-        :root {
-            color-scheme: light dark;
-            --legal-background: #EEF3F8;
-            --legal-surface: #FFFFFF;
-            --legal-text: #333333;
-            --legal-muted: #8E8E93;
-            --legal-outline: #C6C6C8;
-            --legal-primary: #3A4D8D;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --legal-background: #101B2C;
-                --legal-surface: #1B222F;
-                --legal-text: #ECEEF2;
-                --legal-muted: #B0B8C6;
-                --legal-outline: #3A4556;
-            }
-        }
-        :root[data-theme="light"] {
-            color-scheme: light;
-            --legal-background: #EEF3F8;
-            --legal-surface: #FFFFFF;
-            --legal-text: #333333;
-            --legal-muted: #8E8E93;
-            --legal-outline: #C6C6C8;
-        }
-        :root[data-theme="dark"] {
-            color-scheme: dark;
-            --legal-background: #101B2C;
-            --legal-surface: #1B222F;
-            --legal-text: #ECEEF2;
-            --legal-muted: #B0B8C6;
-            --legal-outline: #3A4556;
-        }
-        html { background: var(--legal-background); color: var(--legal-text); }
-        body {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 24px 18px 48px;
-            background: var(--legal-surface);
-            color: var(--legal-text);
-            font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-            line-height: 1.75;
-        }
-        h1, h2, h3 { color: var(--legal-text); line-height: 1.35; }
-        h1 { margin-top: 0; }
-        a { color: var(--legal-primary); text-underline-offset: .15em; }
-        address { color: var(--legal-muted); font-style: normal; }
-        li::marker { color: var(--legal-primary); }
-        @media (max-width: 760px) {
-            body { padding-right: 16px; padding-left: 16px; }
-        }
+      :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; }
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; box-sizing: border-box; }
+      main { width: min(100%, 640px); }
+      p { line-height: 1.8; }
+      a { text-underline-offset: .15em; }
     </style>
-</head>
-<body>
-
-<h1>利用規約</h1>
-
-<p>
-    この利用規約（以下「本規約」といいます。）は、市川 凜（個人開発者。以下「運営者」といいます。）が提供する「東京工科大学スクールバス情報サービス」（以下「本サービス」といいます。）の利用条件を定めるものです。本サービスは東京工科大学が運営する公式サービスではありません。
-</p>
-
-<p>
-    本サービスには、Web版、iOS版アプリおよびAndroid版アプリ（以下、総称して「各サービス」といいます。）が含まれます。利用者は、各サービスを利用することにより、本規約に同意したものとします。利用者情報の取扱いについては、別途定める<a href="poricy.html">プライバシーポリシー</a>が適用されます。Web版では、フッターに掲載した本規約およびプライバシーポリシーへのリンクから内容を確認できます。
-</p>
-
-<h2>第1章　共通規定</h2>
-
-<h3>第1条（適用）</h3>
-<ol>
-    <li>本規約は、各サービスの提供条件および利用者と運営者との間の権利義務関係を定めるものです。</li>
-    <li>各サービスに個別の説明、注意事項または設定がある場合でも、本規約と矛盾しない範囲で本規約が適用されます。</li>
-    <li>本サービスの利用にあたり、利用者は法令、本規約および各サービスに表示される注意事項を遵守するものとします。</li>
-</ol>
-
-<h3>第2条（定義）</h3>
-<ol>
-    <li>「Web版」とは、運営者がWebブラウザ向けに提供する本サービスをいいます。</li>
-    <li>「iOS版」とは、Appleが提供するApp Storeを通じて配布される本サービスのiOS向けアプリをいいます。</li>
-    <li>「Android版」とは、Google Playを通じて配布される本サービスのAndroid向けアプリをいいます。</li>
-    <li>「利用者」とは、各サービスを利用するすべての方をいいます。本サービスは、アカウント登録を前提とするサービスではありません。</li>
-    <li>「時刻情報」とは、本サービスに表示されるスクールバスの運行時刻、停留所、運行状態その他これらに関連する情報をいいます。</li>
-</ol>
-
-<h3>第3条（未成年者の利用）</h3>
-<p>
-    18歳未満の方は、必要に応じて保護者その他の法定代理人の同意を得たうえで本サービスを利用してください。運営者は、通常、年齢入力または本人確認を行いません。
-</p>
-
-<h3>第4条（本サービスの内容）</h3>
-<ol>
-    <li>本サービスは、スクールバスに関する時刻情報を表示するための情報提供サービスです。</li>
-    <li>iOS版では、スクールバス情報に加え、GPAの試算、利用者が選択した写真からのPDF作成、大学構内図その他の学内情報への導線等を提供します。時間割画面には提供準備中の機能が含まれます。</li>
-    <li>Android版の今回の提供範囲には、ホーム画面および時間割タブは含まれません。将来これらの機能をAndroid版で提供した場合は、当該機能について本規約およびプライバシーポリシーの対応する定めを適用します。</li>
-    <li>時刻情報は、大学、交通機関その他の情報源の変更、通信障害、更新遅延その他の事情により、実際の運行状況と異なる場合があります。</li>
-    <li>重要な移動を行う場合、利用者は大学、交通機関またはその他の公式情報も確認するものとします。</li>
-    <li>本サービスは、時刻情報の正確性、完全性、最新性、特定の目的への適合性または継続的な提供を保証するものではありません。</li>
-</ol>
-
-<h3>第5条（利用環境および費用）</h3>
-<ol>
-    <li>各サービスの利用に必要な端末、通信回線、通信料、電気代その他の費用は、利用者の負担とします。</li>
-    <li>利用者は、自身の端末、ブラウザ、OSおよび通信環境を適切に管理するものとします。</li>
-    <li>各サービスの機能、表示、通知および広告の有無は、OS、ブラウザ、端末、地域、同意状況その他の条件により異なる場合があります。</li>
-</ol>
-
-<h3>第6条（禁止事項）</h3>
-<p>利用者は、本サービスの利用にあたり、次の行為をしてはなりません。</p>
-<ol>
-    <li>法令または公序良俗に違反する行為</li>
-    <li>運営者、大学、交通機関その他の第三者になりすます行為、または本サービスを公式サービスであると誤認させる表示をする行為</li>
-    <li>本サービス、運営者または第三者の権利もしくは利益を侵害する行為</li>
-    <li>本サービスのサーバー、ネットワークまたは各サービスの動作に過度な負荷をかける行為</li>
-    <li>不正アクセス、マルウェアの送信、リバースエンジニアリングその他本サービスの運営を妨げる行為</li>
-    <li>他人の個人情報を不正に収集、利用または公開する行為</li>
-    <li>前各号を助長し、または容易にする行為</li>
-    <li>その他、運営者が本サービスの提供または他の利用者の利用に支障があると合理的に判断する行為</li>
-</ol>
-
-<h3>第7条（停止および変更）</h3>
-<p>
-    運営者は、保守、障害、過度なアクセス、セキュリティ上の必要、天災地変その他のやむを得ない事情により、各サービスの全部または一部を、事前の通知なく停止または中断できるものとします。運営者は、必要に応じて本サービスの内容、提供方法または対応プラットフォームを変更し、または提供を終了することがあります。
-</p>
-
-<h3>第8条（知的財産権）</h3>
-<ol>
-    <li>本サービスのプログラム、画面、文章、ロゴ、デザインその他の構成要素に関する知的財産権は、運営者または正当な権利者に帰属します。</li>
-    <li>本規約は、利用者に対して、本サービスに関する知的財産権の譲渡または本規約に明示されない利用許諾を行うものではありません。</li>
-    <li>時刻情報その他第三者が権利を有する情報については、当該権利者の権利を尊重するものとします。</li>
-</ol>
-
-<h3>第9条（免責および損害賠償）</h3>
-<ol>
-    <li>運営者は、故意または重過失がある場合を除き、本サービスの利用により利用者に生じた損害について、通常かつ直接に生じた損害に限り責任を負うものとします。</li>
-    <li>前項の損害賠償額は、1万円を上限とします。ただし、消費者契約法その他の法令により制限できない責任については、この限りではありません。</li>
-    <li>運営者は、運休、遅延、臨時変更、通信障害、端末またはOSの仕様その他運営者が直接管理できない事情による損害について、責任を負いません。ただし、法令上免責が認められない場合を除きます。</li>
-    <li>利用者と大学、交通機関、アプリストア、広告事業者その他の第三者との間に生じた紛争は、利用者と当該第三者との間で解決するものとします。</li>
-</ol>
-
-<h2>第2章　Web版に関する規定</h2>
-
-<h3>第10条（Web版の利用）</h3>
-<ol>
-    <li>Web版は、対応するWebブラウザから利用できます。Web版は、利用者アカウントの作成を必要としません。</li>
-    <li>Web版では、利用者が選択した路線、方向および外観モードを、利便性のため利用者のブラウザのlocalStorageに保存することがあります。また、アプリ案内の表示状態をsessionStorageに、アプリ案内を一定期間表示しない設定をlocalStorageに保存することがあります。</li>
-    <li>Web版は、氏名、学籍番号、所属または位置情報を、運営者のサービス機能として保存しません。</li>
-    <li>Web版の利用に際して、配信事業者その他の第三者がアクセスログ、IPアドレスその他の情報を取り扱う場合があります。詳細は<a href="poricy.html">プライバシーポリシー</a>を確認してください。</li>
-</ol>
-
-<h2>第3章　iOS版に関する規定</h2>
-
-<h3>第11条（iOS版の利用）</h3>
-<ol>
-    <li>iOS版は、App Storeの利用条件およびAppleの規約に従って利用するものとします。</li>
-    <li>iOS版では、利用者が入力した所属等の設定、路線および方向その他の設定をUserDefaultsに、時刻表キャッシュをCachesに保存することがあります。旧バージョンのDocuments内のキャッシュが残っている場合は、Cachesへ移行することがあります。</li>
-    <li>GPA試算では、利用者が入力した科目名、単位数および成績を端末内のUserDefaultsに保存します。写真からのPDF作成では、選択された写真を処理中のメモリ上で扱い、作成したPDFを利用者が指定した書き出し先へ保存します。大学構内図は、画面表示時に東京工科大学のWebサイトから画像を取得します。</li>
-    <li>通知機能は、利用者の端末設定および許可状況に応じて提供されます。現行版の通知は端末内のスケジュール機能によるローカル通知であり、APNs等のサーバー経由Push通知を利用しません。通知の到達時刻や到達を保証するものではありません。通知許可は、利用者が端末のOS設定から変更または撤回できます。本サービス内には通知許可を管理する画面を設けていません。</li>
-    <li>現行版のiOSアプリ本体は、App Tracking Transparencyによる追跡許可を求めず、IDFAを利用しません。ただし、広告SDKが独自に取り扱う情報については、プライバシーポリシーおよび広告事業者の説明が適用されます。</li>
-    <li>iOS版は、初回または新しい規約等への明示的な同意後にFirebase Analyticsを有効化します。利用者は設定からいつでも無効化でき、無効化しても主要機能を利用できます。Firebase Crashlyticsによるクラッシュ・診断情報の収集はAnalyticsの同意とは独立して起動時から有効です。</li>
-    <li>広告その他の外部サービスの提供条件は、Apple、広告事業者および各サービス提供者の規約にも従うものとします。</li>
-</ol>
-
-<h2>第4章　Android版に関する規定</h2>
-
-<h3>第12条（Android版の利用）</h3>
-<ol>
-    <li>Android版は、当面、日本向けにGoogle Playを通じて提供します。配信地域、対応端末および機能は、Google Play、Androidの仕様その他の事情により変更される場合があります。</li>
-    <li>Android版では、利用者が入力した所属、入学年度、学部、学科、よく利用する駅等の設定、路線および方向、時刻表キャッシュその他の設定を、端末内に保存することがあります。</li>
-    <li>通知機能は、利用者の許可および端末設定に応じて提供されます。現行版の通知は端末内のスケジュール機能によるローカル通知であり、通知の到達時刻や到達を保証するものではありません。通知許可は、利用者が端末のOS設定から変更または撤回できます。本サービス内には通知許可を管理する画面を設けていません。</li>
-    <li>現行版のAndroid版は、アプリコードからGoogleのUser Messaging Platform（UMP）のAPIまたは同意画面を利用していません。Google Mobile Ads SDKへの広告リクエストは非パーソナライズ広告として扱い、Advertising IDの権限をManifestから除外しています。ただし、SDKの依存関係、取得情報および広告配信事業者の処理には、各事業者の仕様、プライバシーポリシーおよび利用規約が適用されます。</li>
-    <li>Android版は、初回または新しい規約等への明示的な同意後にFirebase Analyticsを有効化します。利用者は設定からいつでも無効化でき、無効化しても主要機能を利用できます。アプリ本体が設定するイベントおよびSDKが自動収集し得る情報の詳細は、<a href="poricy.html">プライバシーポリシー</a>によります。</li>
-    <li>Android版ではFirebase Crashlyticsによるクラッシュ・診断情報の収集をAnalyticsの同意とは独立して起動時から有効にします。</li>
-    <li>Android版では、時刻表キャッシュおよび所属、入学年度、学部、学科、よく利用する駅等の設定を、Googleのクラウドバックアップおよび端末間転送から除外しています。詳細は<a href="poricy.html">プライバシーポリシー</a>を確認してください。</li>
-</ol>
-
-<h2>第5章　その他の規定</h2>
-
-<h3>第13条（プライバシー）</h3>
-<p>
-    利用者情報の取扱いについては、別途定める<a href="poricy.html">プライバシーポリシー</a>によるものとします。本規約および同ポリシーの対象は本サービスであり、運営者が別途提供する開発者ページ、app-ads.txt、講義APIその他のサービスは、本サービスに接続して利用者情報を取り扱う場合を除き対象外です。
-</p>
-
-<h3>第14条（本規約の変更）</h3>
-<p>
-    運営者は、必要に応じて本規約を変更できます。軽微な変更は本ページへの掲載により周知し、重要な変更はWeb版またはアプリ内で目立つ方法により、原則として施行日の7日前までに告知します。ただし、法令上の対応、セキュリティ上の緊急対応その他やむを得ない場合は、告知期間を短縮または施行後に告知することがあります。法令上利用者の同意が必要な変更については、必要な方法で改めて同意を取得します。
-</p>
-<p>
-    iOS版およびAndroid版では、初回利用時ならびに同意が必要な重要な改定時に「同意して続ける」等のボタンを表示します。当該ボタンの操作により、同意した規約等のrevisionを端末内に保存し、Firebase Analyticsを有効にします。画面のスワイプ、背景のタップその他の意図しない閉じる操作を同意として扱いません。Analyticsは設定からいつでも無効化でき、無効化しても主要機能を利用できます。送信済みデータの扱いその他の詳細は<a href="poricy.html">プライバシーポリシー</a>を確認してください。
-</p>
-
-<h3>第15条（連絡および問い合わせ）</h3>
-<p>
-    一般的な意見・不具合については、<a href="https://docs.google.com/forms/d/e/1FAIpQLSceuZqUIm8wquf1NN4sEW_0juEMXoroC0rgfeU4hriL2fKKpg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">問い合わせフォーム</a>を利用してください。個人情報の開示、訂正、利用停止または削除その他プライバシーに関する請求は、<a href="poricy.html">プライバシーポリシー</a>に記載するメールアドレスで受け付けます。
-</p>
-
-<h3>第16条（運営者情報）</h3>
-<address>
-    運営者：市川 凜（個人開発者）<br>
-    住所：法令に基づく請求があった場合、遅滞なく開示します。<br>
-    プライバシーに関する連絡先：<a href="mailto:rin.ichikawa.appcreate@gmail.com">rin.ichikawa.appcreate@gmail.com</a>
-</address>
-
-<h3>第17条（準拠法および管轄裁判所）</h3>
-<ol>
-    <li>本規約および各サービスの利用関係には、日本法を適用します。</li>
-    <li>本規約または各サービスに関して生じた紛争については、東京地方裁判所または東京簡易裁判所を第一審の専属的合意管轄裁判所とします。</li>
-</ol>
-
-<p>制定日：2026年2月1日<br>最終改定日：2026年9月15日<br>施行日：2026年9月22日<br>revision：3</p>
-
-</body>
+  </head>
+  <body>
+    <main>
+      <h1>利用規約は移行しました</h1>
+      <p>現在の利用規約は、新しいサイトで公開しています。</p>
+      <p><a href="https://tut-app.rin-works.net/terms.html">現在の利用規約を開く</a></p>
+    </main>
+  </body>
 </html>

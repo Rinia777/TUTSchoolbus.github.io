@@ -36,8 +36,6 @@ describe('旧サイトの移行案内', () => {
       assert.ok(page.html.includes(`<link rel="canonical" href="${page.canonical}" />`));
       assert.ok(!/<script\b/i.test(page.html));
       for (const link of page.links) assert.ok(page.html.includes(`href="${link}"`));
-      assert.ok(page.html.includes('kiyaku.html'));
-      assert.ok(page.html.includes('poricy.html'));
     }
 
     assert.ok(timetableHtml.includes('東京工科大学への本サイトに関するお問い合わせはお控えください。'));
@@ -45,16 +43,25 @@ describe('旧サイトの移行案内', () => {
 
     assert.ok(!sitemap.includes('https://rinia777.github.io/TUTSchoolbus.github.io/</loc>'));
     assert.ok(!sitemap.includes('https://rinia777.github.io/TUTSchoolbus.github.io/app/</loc>'));
-    assert.ok(sitemap.includes('https://rinia777.github.io/TUTSchoolbus.github.io/kiyaku.html'));
-    assert.ok(sitemap.includes('https://rinia777.github.io/TUTSchoolbus.github.io/poricy.html'));
+    assert.ok(!sitemap.includes('https://rinia777.github.io/TUTSchoolbus.github.io/kiyaku.html'));
+    assert.ok(!sitemap.includes('https://rinia777.github.io/TUTSchoolbus.github.io/poricy.html'));
   });
 });
 
 describe('旧法務ページ', () => {
-  it('旧規約・プライバシーポリシーのURLと問い合わせ先を維持する', () => {
-    assert.ok(termsHtml.includes('mailto:rin.ichikawa.appcreate@gmail.com'));
-    assert.ok(privacyHtml.includes('mailto:rin.ichikawa.appcreate@gmail.com'));
-    assert.ok(!termsHtml.includes('support@rin-works.net'));
-    assert.ok(!privacyHtml.includes('support@rin-works.net'));
+  it('旧URLは法務本文を持たず現行Cloudflareページへ案内する', () => {
+    const redirects = [
+      [termsHtml, 'https://tut-app.rin-works.net/terms.html'],
+      [privacyHtml, 'https://tut-app.rin-works.net/privacy_policy.html'],
+    ];
+
+    for (const [html, target] of redirects) {
+      assert.ok(html.includes('<meta name="robots" content="noindex,follow" />'));
+      assert.ok(html.includes(`<meta http-equiv="refresh" content="0; url=${target}" />`));
+      assert.ok(html.includes(`<link rel="canonical" href="${target}" />`));
+      assert.ok(html.includes(`href="${target}"`));
+      assert.ok(!/<script\b/i.test(html));
+      assert.ok(!html.includes('revision：'));
+    }
   });
 });
