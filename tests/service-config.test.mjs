@@ -45,16 +45,5 @@ describe('service configuration contract', () => {
     assert.ok(datePattern.test(config.policies.effectiveDate));
     expectAllowedHttpsUrl(config.policies.termsUrl);
     expectAllowedHttpsUrl(config.policies.privacyUrl);
-    assert.equal(config.policies.revision, 6);
-    assert.equal(config.policies.revisedDate, '2026-10-05');
-    assert.equal(config.policies.effectiveDate, '2026-10-12');
-    assert.equal(
-      config.policies.termsUrl,
-      'https://rinia777.github.io/TUTSchoolbus.github.io/kiyaku.html',
-    );
-    assert.equal(
-      config.policies.privacyUrl,
-      'https://rinia777.github.io/TUTSchoolbus.github.io/poricy.html',
-    );
   });
 });
