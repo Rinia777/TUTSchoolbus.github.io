@@ -14,7 +14,7 @@ const termsHtml = read('kiyaku.html');
 const sitemap = read('public/sitemap.xml');
 
 describe('旧サイトの移行案内', () => {
-  it('Web時刻表とアプリ紹介を新ドメインへ案内する', () => {
+  it('Web時刻表とアプリ紹介を新ドメインへ転送・案内する', () => {
     const pages = [
       {
         html: timetableHtml,
@@ -33,6 +33,7 @@ describe('旧サイトの移行案内', () => {
     for (const page of pages) {
       assert.ok(page.html.includes(`<h1>${page.heading}</h1>`));
       assert.ok(page.html.includes('<meta name="robots" content="noindex,follow" />'));
+      assert.ok(page.html.includes(`<meta http-equiv="refresh" content="0; url=${page.canonical}" />`));
       assert.ok(page.html.includes(`<link rel="canonical" href="${page.canonical}" />`));
       assert.ok(!/<script\b/i.test(page.html));
       for (const link of page.links) assert.ok(page.html.includes(`href="${link}"`));
